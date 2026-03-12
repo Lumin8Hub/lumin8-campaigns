@@ -13,6 +13,12 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        heading: ['"Plus Jakarta Sans"', 'sans-serif'],
+        body: ['"Plus Jakarta Sans"', 'sans-serif'],
+        serif: ['"DM Serif Display"', 'serif'],
+        mono: ['"IBM Plex Mono"', 'monospace'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -47,6 +53,16 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        "lumin8-black": "hsl(var(--lumin8-black))",
+        "lumin8-white": "hsl(var(--lumin8-white))",
+        "lumin8-off-white": "hsl(var(--lumin8-off-white))",
+        "lumin8-yellow": "hsl(var(--lumin8-yellow))",
+        "lumin8-green": "hsl(var(--lumin8-green))",
+        "lumin8-pink": "hsl(var(--lumin8-pink))",
+        "lumin8-coral": "hsl(var(--lumin8-coral))",
+        "lumin8-lavender": "hsl(var(--lumin8-lavender))",
+        "lumin8-gray-600": "hsl(var(--lumin8-gray-600))",
+        "lumin8-gray-400": "hsl(var(--lumin8-gray-400))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -65,25 +81,22 @@ export default {
       },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+        "pulse-badge": {
+          "0%, 100%": { boxShadow: "0 0 0 0 hsl(72 100% 62% / 0.4)" },
+          "50%": { boxShadow: "0 0 0 8px hsl(72 100% 62% / 0)" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "pulse-badge": "pulse-badge 2s ease-in-out infinite",
       },
     },
   },
