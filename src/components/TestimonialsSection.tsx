@@ -2,7 +2,7 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const testimonials = [
   {
-    quote: "Stuff was instrumental in pivoting my business in a different direction. They did deep into your business and your audience and help you develop a marketing strategy.",
+    quote: "Staff was instrumental in pivoting my business in a different direction. They dig deep into your business and your audience and help you develop a marketing strategy.",
     name: "Jenny Trummer",
     title: "Founder at Certified Lover Corn",
   },

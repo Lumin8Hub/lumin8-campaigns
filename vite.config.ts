@@ -5,11 +5,9 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: process.env.GITHUB_ACTIONS === "true" ? "/lumin8-starter/" : "/",
   server: {
-    host: "0.0.0.0",
+    host: "::",
     port: 8080,
-    allowedHosts: true,
     hmr: {
       overlay: false,
     },

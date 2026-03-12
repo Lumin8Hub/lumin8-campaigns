@@ -17,22 +17,31 @@ export const useScrollAnimation = () => {
       const subheadline = el.querySelector(".section-subheadline");
 
       if (label) {
-        gsap.from(label, {
-          scrollTrigger: { trigger: el, start: "top 85%" },
-          y: 20, opacity: 0, duration: 0.5, ease: "power3.out",
-        });
+        gsap.fromTo(label,
+          { y: 20, opacity: 0 },
+          {
+            y: 0, opacity: 1, duration: 0.5, ease: "power3.out",
+            scrollTrigger: { trigger: el, start: "top 85%", toggleActions: "play none none none" },
+          }
+        );
       }
       if (headline) {
-        gsap.from(headline, {
-          scrollTrigger: { trigger: el, start: "top 80%" },
-          y: 30, opacity: 0, duration: 0.7, ease: "power3.out",
-        });
+        gsap.fromTo(headline,
+          { y: 30, opacity: 0 },
+          {
+            y: 0, opacity: 1, duration: 0.7, ease: "power3.out",
+            scrollTrigger: { trigger: el, start: "top 80%", toggleActions: "play none none none" },
+          }
+        );
       }
       if (subheadline) {
-        gsap.from(subheadline, {
-          scrollTrigger: { trigger: el, start: "top 78%" },
-          y: 20, opacity: 0, duration: 0.6, ease: "power3.out", delay: 0.1,
-        });
+        gsap.fromTo(subheadline,
+          { y: 20, opacity: 0 },
+          {
+            y: 0, opacity: 1, duration: 0.6, ease: "power3.out", delay: 0.1,
+            scrollTrigger: { trigger: el, start: "top 78%", toggleActions: "play none none none" },
+          }
+        );
       }
     }, el);
 
@@ -50,11 +59,14 @@ export const useCardStagger = (selector: string = ".stagger-card") => {
     if (!el) return;
 
     const ctx = gsap.context(() => {
-      gsap.from(selector, {
-        scrollTrigger: { trigger: el, start: "top 80%" },
-        y: 60, opacity: 0, duration: 0.8, ease: "power3.out",
-        stagger: 0.15,
-      });
+      gsap.fromTo(selector,
+        { y: 60, opacity: 0 },
+        {
+          y: 0, opacity: 1, duration: 0.8, ease: "power3.out",
+          stagger: 0.15,
+          scrollTrigger: { trigger: el, start: "top 85%", toggleActions: "play none none none" },
+        }
+      );
     }, el);
 
     return () => ctx.revert();

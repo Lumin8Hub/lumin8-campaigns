@@ -1,55 +1,17 @@
-import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { processSteps } from "@/data/process";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-
-gsap.registerPlugin(ScrollTrigger);
+import { useScrollAnimation, useCardStagger } from "@/hooks/useScrollAnimation";
 
 const colorMap: Record<string, string> = {
-  "lumin8-yellow": "border-lumin8-yellow",
-  "lumin8-green": "border-lumin8-green",
-  "lumin8-pink": "border-lumin8-pink",
-  "lumin8-coral": "border-lumin8-coral",
-  "lumin8-lavender": "border-lumin8-lavender",
+  "lumin8-yellow": "bg-lumin8-yellow text-lumin8-black",
+  "lumin8-green": "bg-lumin8-green text-lumin8-black",
+  "lumin8-pink": "bg-lumin8-pink text-lumin8-black",
+  "lumin8-coral": "bg-lumin8-coral text-lumin8-black",
+  "lumin8-lavender": "bg-lumin8-lavender text-lumin8-black",
 };
 
 const ProcessSection = () => {
   const sectionRef = useScrollAnimation();
-  const cardsContainerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const container = cardsContainerRef.current;
-    if (!container) return;
-
-    const cards = container.querySelectorAll<HTMLElement>(".process-card");
-
-    const ctx = gsap.context(() => {
-      cards.forEach((card, i) => {
-        if (i > 0) {
-          gsap.to(cards[i - 1], {
-            scale: 0.92,
-            filter: "blur(8px)",
-            opacity: 0.4,
-            scrollTrigger: {
-              trigger: card,
-              start: "top bottom",
-              end: "top top",
-              scrub: true,
-            },
-          });
-        }
-        ScrollTrigger.create({
-          trigger: card,
-          start: "top 80px",
-          pin: true,
-          pinSpacing: false,
-        });
-      });
-    }, container);
-
-    return () => ctx.revert();
-  }, []);
+  const cardsRef = useCardStagger(".process-card");
 
   return (
     <section ref={sectionRef as React.RefObject<HTMLElement>} id="process" className="bg-background py-24 px-6 relative overflow-hidden">
@@ -62,18 +24,26 @@ const ProcessSection = () => {
           A streamlined, no-nonsense process. We keep you in the loop without wasting your time.
         </p>
 
-        <div ref={cardsContainerRef} className="space-y-6">
-          {processSteps.map((step) => (
+        <div ref={cardsRef} className="space-y-0">
+          {processSteps.map((step, index) => (
             <div
               key={step.step}
-              className={`process-card bg-muted/40 rounded-3xl p-8 border-l-4 ${colorMap[step.color]} border border-foreground/[0.06] will-change-transform`}
+              className="process-card stagger-card relative flex gap-6 md:gap-8 pb-12"
             >
-              <div className="flex items-center gap-4 mb-4">
-                <span className="font-mono text-sm text-lumin8-gray-400">Step {step.step}</span>
-                <span className="font-mono text-xs text-lumin8-gray-400">— {step.timeline}</span>
+              {/* Timeline line */}
+              {index < processSteps.length - 1 && (
+                <div className="absolute left-6 top-14 w-px h-full bg-gradient-to-b from-primary/40 to-transparent" />
+              )}
+              {/* Step number circle */}
+              <div className={`flex-shrink-0 w-12 h-12 rounded-full font-mono font-bold text-sm flex items-center justify-center ${colorMap[step.color] || "bg-primary text-primary-foreground"}`}>
+                {String(step.step).padStart(2, "0")}
               </div>
-              <h3 className="font-heading font-bold text-xl text-foreground mb-3">{step.title}</h3>
-              <p className="text-lumin8-gray-400 leading-relaxed">{step.description}</p>
+              {/* Content */}
+              <div>
+                <span className="text-lumin8-gray-400 font-mono text-xs uppercase tracking-wider">{step.timeline}</span>
+                <h3 className="text-xl font-heading font-bold text-foreground mt-1 mb-2">{step.title}</h3>
+                <p className="text-lumin8-gray-400 leading-relaxed">{step.description}</p>
+              </div>
             </div>
           ))}
         </div>
