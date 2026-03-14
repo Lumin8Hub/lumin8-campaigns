@@ -44,7 +44,7 @@ const Hero = () => {
         </p>
 
         <p className="hero-body max-w-xl text-lumin8-gray-400 text-lg leading-relaxed mb-8">
-          Lumin8 Starter delivers a custom, strategically built website crafted by a real marketing team — not a drag-and-drop template. AI-accelerated. Human-refined. Starting at $500 CAD.
+          Lumin8 Starter delivers a custom, strategically built website crafted by a real marketing team — not a drag-and-drop template. AI-accelerated. Human-refined. Starting at $750 CAD.
         </p>
 
         <div className="hero-ctas flex flex-col sm:flex-row gap-4 mb-4">
