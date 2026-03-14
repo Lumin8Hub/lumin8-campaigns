@@ -10,7 +10,6 @@ import PricingSection from "@/components/PricingSection";
 import AddOnsSection from "@/components/AddOnsSection";
 import ProcessSection from "@/components/ProcessSection";
 import ContestSection from "@/components/ContestSection";
-import NonWinnersSection from "@/components/NonWinnersSection";
 import FAQSection from "@/components/FAQSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import AboutSection from "@/components/AboutSection";
@@ -38,7 +37,6 @@ const Index = () => {
       <AddOnsSection />
       <ProcessSection />
       <ContestSection />
-      <NonWinnersSection />
       <FAQSection />
       <TestimonialsSection />
       <AboutSection />

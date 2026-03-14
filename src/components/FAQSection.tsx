@@ -33,7 +33,7 @@ const FAQSection = () => {
         <h2 className="section-headline text-lumin8-black mb-12">Questions? We've got answers.</h2>
 
         <div className="space-y-0">
-          {faqItems.map((item, i) => (
+          {faqs.map((item, i) => (
             <div key={i} className="border-b border-lumin8-black/10">
               <button
                 onClick={() => toggle(i)}

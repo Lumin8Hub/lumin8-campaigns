@@ -65,7 +65,7 @@ const Hero = () => {
         </div>
 
         <p className="hero-ctas text-sm text-lumin8-gray-400">
-          🎉 Enter our contest for a chance to win a complete starter package valued at $1,400
+          🎉 Enter our contest for a chance to win a complete starter package valued at $750
         </p>
       </div>
     </section>
