@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/lumin8-logo.png";
 
 const CONTEST_FORM_URL = "#contest"; // PLACEHOLDER — replace with actual form URL before launch
 
@@ -35,7 +34,9 @@ const Navbar = () => {
           : "bg-transparent"
       }`}
     >
-      <img src={logo} alt="Lumin8" className="h-8 w-auto" />
+      <span className="font-heading font-bold text-lg tracking-[0.15em] text-foreground">
+        LUMIN8
+      </span>
 
       {/* Desktop links */}
       <div className="hidden md:flex items-center gap-8">
