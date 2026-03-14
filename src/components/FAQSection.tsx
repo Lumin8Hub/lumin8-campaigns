@@ -1,7 +1,7 @@
 import { useState, useRef, useCallback } from "react";
 import { ChevronDown } from "lucide-react";
 import { gsap } from "gsap";
-import { faqItems } from "@/data/faq";
+import { faqs } from "@/data/faq";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const FAQSection = () => {
