@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import lumin8Logo from "@/assets/lumin8-logo.png";
 
 const CONTEST_FORM_URL = "#contest"; // PLACEHOLDER — replace with actual form URL before launch
 
