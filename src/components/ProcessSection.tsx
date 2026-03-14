@@ -18,8 +18,7 @@ const ProcessSection = () => {
       <div className="blob blob-green w-36 h-36 top-20 -right-10 opacity-40 blur-[50px]" />
 
       <div className="max-w-3xl mx-auto">
-        <span className="section-label">// HOW IT WORKS</span>
-        <h2 className="section-headline text-foreground mb-2">From zero to live in 18 days</h2>
+        <h2 className="section-headline text-foreground mb-2">From zero to live in 10 days</h2>
         <p className="section-subheadline mb-16">
           A streamlined, no-nonsense process. We keep you in the loop without wasting your time.
         </p>

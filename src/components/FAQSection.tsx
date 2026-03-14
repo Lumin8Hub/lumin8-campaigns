@@ -29,7 +29,6 @@ const FAQSection = () => {
   return (
     <section ref={sectionRef as React.RefObject<HTMLElement>} id="faq" className="bg-lumin8-off-white py-24 px-6">
       <div className="max-w-3xl mx-auto">
-        <span className="section-label text-lumin8-gray-600">// FAQ</span>
         <h2 className="section-headline text-lumin8-black mb-12">Questions? We've got answers.</h2>
 
         <div className="space-y-0">

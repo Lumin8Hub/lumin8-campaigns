@@ -18,7 +18,6 @@ const ProblemSection = () => {
       <div className="blob blob-green w-24 h-24 bottom-10 left-10 opacity-40 blur-[40px]" />
 
       <div className="max-w-6xl mx-auto">
-        <span className="section-label">// THE PROBLEM</span>
         <h2 className="section-headline text-foreground mb-12">
           You know you need a website. But...
         </h2>

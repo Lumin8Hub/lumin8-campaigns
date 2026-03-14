@@ -1,6 +1,6 @@
 export const faqItems = [
   {
-    question: "What kind of website do I get for $500?",
+    question: "What kind of website do I get for $750?",
     answer: "A fully custom, 3–5 page React website built by professional marketers. It's mobile-responsive, blazing fast, and hosted on enterprise-grade infrastructure. This is NOT a template — it's a strategically built site tailored to your business.",
   },
   {
@@ -25,11 +25,11 @@ export const faqItems = [
   },
   {
     question: "What if I don't have a logo or branding?",
-    answer: "Add our Brand Starter Kit ($350) to any package. You'll get 3 AI-assisted logo concepts, a color palette, typography selections, and a Canva brand kit you can use everywhere.",
+    answer: "Add our Brand Starter Kit (starting at $500) to any package. You'll get 3 AI-assisted logo concepts, a color palette, typography selections, and a Canva brand kit you can use everywhere.",
   },
   {
     question: "What's the contest about?",
-    answer: 'We\'re giving away a complete "Brand New Business" package (valued at $1,400) to one small business or non-profit. It\'s an application, not a random draw — we choose the winner based on who can benefit most and provide the best case study for our portfolio. Every applicant who doesn\'t win gets a $500 discount on any Starter package.',
+    answer: "We're giving away a Starter website package (valued at $750) to one small business or non-profit. It's an application, not a random draw — we choose the winner based on who can benefit most and provide the best case study for our portfolio.",
   },
   {
     question: "What's the catch?",

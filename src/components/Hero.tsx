@@ -28,8 +28,6 @@ const Hero = () => {
       <div className="blob blob-yellow w-28 h-28 top-[20%] right-[35%] opacity-40 blur-[40px]" />
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 pb-20 md:pb-28 pt-32 w-full">
-        <span className="hero-label section-label">// LUMIN8 STARTER TIER</span>
-
         <h1
           className="hero-headline font-heading font-extrabold tracking-[-0.03em] leading-[1.05] text-foreground mb-4"
           style={{ fontSize: "clamp(2.5rem, 6vw, 4.5rem)" }}
@@ -44,7 +42,7 @@ const Hero = () => {
         </p>
 
         <p className="hero-body max-w-xl text-lumin8-gray-400 text-lg leading-relaxed mb-8">
-          Lumin8 Starter delivers a custom, strategically built website crafted by a real marketing team — not a drag-and-drop template. AI-accelerated. Human-refined. Starting at $500 CAD.
+          Lumin8 Starter delivers a custom, strategically built website crafted by a real marketing team — not a drag-and-drop template. AI-accelerated. Human-refined. Starting at $750 CAD.
         </p>
 
         <div className="hero-ctas flex flex-col sm:flex-row gap-4 mb-4">
@@ -65,7 +63,7 @@ const Hero = () => {
         </div>
 
         <p className="hero-ctas text-sm text-lumin8-gray-400">
-          🎉 Enter our contest for a chance to win a complete starter package valued at $1,400
+          🎉 Enter our contest for a chance to win a Starter website valued at $750
         </p>
       </div>
     </section>

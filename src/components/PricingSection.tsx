@@ -14,7 +14,6 @@ const PricingSection = () => {
       <div className="blob blob-lavender w-32 h-32 bottom-20 -left-10 opacity-30 blur-[50px]" />
 
       <div className="max-w-6xl mx-auto">
-        <span className="section-label">// PACKAGES & PRICING</span>
         <h2 className="section-headline text-foreground mb-2">
           Everything you need to launch.
         </h2>
@@ -78,13 +77,13 @@ const PricingSection = () => {
         {/* Brand starter kit banner */}
         <div className="mt-12 bg-muted/40 rounded-2xl p-8 border border-foreground/[0.06] text-center">
           <p className="text-foreground font-heading font-semibold text-lg mb-2">
-            🎨 Need branding too? Add our Brand Starter Kit to any package for $350
+            🎨 Need branding too? Add our Brand Starter Kit to any package — starting at $500
           </p>
           <p className="text-lumin8-gray-400 text-sm mb-1">
             Includes: AI-assisted logo (3 concepts), color palette, typography system, and a Canva brand kit.
           </p>
           <p className="text-primary font-heading font-bold">
-            Full "Brand New Business" bundle: $1,400 (save $225)
+            Starter + Brand Kit from $1,250
           </p>
         </div>
       </div>

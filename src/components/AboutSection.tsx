@@ -6,7 +6,6 @@ const AboutSection = () => {
   return (
     <section ref={sectionRef as React.RefObject<HTMLElement>} className="bg-lumin8-off-white py-24 px-6">
       <div className="max-w-5xl mx-auto">
-        <span className="section-label text-lumin8-gray-600">// ABOUT LUMIN8</span>
         <h2 className="section-headline text-lumin8-black mb-8">
           A full-service agency, offering a front door for everyone.
         </h2>

@@ -8,7 +8,6 @@ const AddOnsSection = () => {
   return (
     <section ref={sectionRef as React.RefObject<HTMLElement>} className="bg-lumin8-off-white py-24 px-6">
       <div className="max-w-6xl mx-auto">
-        <span className="section-label text-lumin8-gray-600">// ADD-ONS</span>
         <h2 className="section-headline text-lumin8-black">Power up your package</h2>
         <p className="section-subheadline text-lumin8-gray-600 mb-12">
           Layer on exactly what you need. All add-ons are one-time costs unless noted.
