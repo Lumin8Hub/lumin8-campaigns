@@ -1,19 +1,23 @@
 import { useEffect, useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import lumin8Logo from "@/assets/lumin8-logo.png";
 
 const CONTEST_FORM_URL = "#contest"; // PLACEHOLDER — replace with actual form URL before launch
 
-const navLinks = [
+const navLinks: { label: string; href: string; isRoute?: boolean }[] = [
   { label: "Services", href: "#solution" },
   { label: "What You Get", href: "#pricing" },
   { label: "Pricing", href: "#pricing" },
+  { label: "Work", href: "/work", isRoute: true },
   { label: "FAQ", href: "#faq" },
 ];
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
@@ -21,10 +25,31 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const handleClick = (href: string) => {
+  const handleClick = (link: typeof navLinks[0]) => {
     setMenuOpen(false);
-    const el = document.querySelector(href);
+    if (link.isRoute) {
+      navigate(link.href);
+      return;
+    }
+    // If we're not on the home page, navigate home first then scroll
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        const el = document.querySelector(link.href);
+        el?.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+      return;
+    }
+    const el = document.querySelector(link.href);
     el?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const handleLogoClick = () => {
+    if (location.pathname !== "/") {
+      navigate("/");
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
   };
 
   return (
@@ -39,14 +64,19 @@ const Navbar = () => {
         background: scrolled ? "rgba(13, 17, 23, 0.8)" : "transparent",
       }}
     >
-      <img src={lumin8Logo} alt="LUMIN8" className="h-7 w-auto" />
+      <img
+        src={lumin8Logo}
+        alt="LUMIN8"
+        className="h-7 w-auto cursor-pointer"
+        onClick={handleLogoClick}
+      />
 
       {/* Desktop links */}
       <div className="hidden md:flex items-center gap-8">
         {navLinks.map((link) => (
           <button
             key={link.label}
-            onClick={() => handleClick(link.href)}
+            onClick={() => handleClick(link)}
             className="text-sm font-body text-foreground/80 hover:-translate-y-px transition-transform duration-300"
           >
             {link.label}
@@ -78,7 +108,7 @@ const Navbar = () => {
           {navLinks.map((link) => (
             <button
               key={link.label}
-              onClick={() => handleClick(link.href)}
+              onClick={() => handleClick(link)}
               className="text-left text-foreground font-body py-2"
             >
               {link.label}

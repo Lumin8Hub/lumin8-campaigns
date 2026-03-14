@@ -5,6 +5,9 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import WorkIndex from "./pages/work/WorkIndex.tsx";
+import EarthSong from "./pages/work/EarthSong.tsx";
+import UnapologeticallyJewish from "./pages/work/UnapologeticallyJewish.tsx";
 
 const queryClient = new QueryClient();
 
@@ -18,6 +21,9 @@ const App = () => (
       <BrowserRouter basename={baseUrl}>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/work" element={<WorkIndex />} />
+          <Route path="/work/earth-song" element={<EarthSong />} />
+          <Route path="/work/unapologetically-jewish" element={<UnapologeticallyJewish />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

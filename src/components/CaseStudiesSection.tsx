@@ -1,19 +1,21 @@
 import { useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import { motion, AnimatePresence, useInView, useReducedMotion } from "framer-motion";
-import { ChevronDown } from "lucide-react";
+import { ArrowRight, ChevronDown } from "lucide-react";
 import SectionReveal from "./animations/SectionReveal";
 import GlowCard from "./animations/GlowCard";
 
 const studies = [
   {
     id: 1,
-    company: "Acronym Solutions",
-    tag: "Website & Branding",
-    accentColor: "#79cac1",
-    summary: "Professional digital presence for a growing consultancy.",
-    challenge: "[Placeholder — awaiting case study content]",
-    solution: "[Placeholder — awaiting case study content]",
-    result: "[Placeholder — awaiting case study content]",
+    company: "Earth Songfire",
+    tag: "Website & Brand Identity",
+    accentColor: "#B08D57",
+    slug: "/work/earth-song",
+    summary: "A nature-inspired digital presence for a holistic wellness practitioner.",
+    challenge: "Earth Songfire had a growing community but no cohesive digital home — just fragmented social profiles and a basic landing page.",
+    solution: "We designed a custom React website with a forest green and gold palette, DM Serif Display typography, and nature-inspired animations.",
+    result: "3x increase in inquiries, a professional digital presence, and a platform that truly reflects the brand's warmth and authenticity.",
   },
   {
     id: 2,
@@ -28,12 +30,13 @@ const studies = [
   {
     id: 3,
     company: "Unapologetically Jewish",
-    tag: "Community Website",
-    accentColor: "#3FB950",
-    summary: "Digital home for a vibrant community brand.",
-    challenge: "[Placeholder — awaiting case study content]",
-    solution: "[Placeholder — awaiting case study content]",
-    result: "[Placeholder — awaiting case study content]",
+    tag: "Community Platform",
+    accentColor: "#CC0000",
+    slug: "/work/unapologetically-jewish",
+    summary: "A bold, high-impact digital home for a vibrant community brand.",
+    challenge: "UJ had built an incredible community through social media but lacked a dedicated digital home that matched their bold brand energy.",
+    solution: "We built a high-contrast, brutalist-inspired website with Oswald typography and a stark red, black, and white palette.",
+    result: "5x community engagement, a powerful digital presence, and a platform that's as unapologetic as the movement it represents.",
   },
 ];
 
@@ -103,7 +106,7 @@ const CardContent = ({
   isExpanded,
   shouldReduceMotion,
 }: {
-  study: typeof studies[0];
+  study: (typeof studies)[number];
   isExpanded: boolean;
   shouldReduceMotion: boolean | null;
 }) => (
@@ -166,6 +169,18 @@ const CardContent = ({
                 <p className="text-lumin8-gray-400 leading-relaxed">{study.result}</p>
               </div>
             </div>
+
+            {study.slug && (
+              <Link
+                to={study.slug}
+                className="inline-flex items-center gap-2 mt-6 text-sm font-semibold transition-transform hover:translate-x-1"
+                style={{ color: study.accentColor }}
+                onClick={(e) => e.stopPropagation()}
+              >
+                View full case study
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            )}
 
             <div
               className="h-0.5 w-full mt-6 rounded-full"

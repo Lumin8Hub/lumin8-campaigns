@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { gsap } from "gsap";
-import SparkleBackground from "./animations/SparkleBackground";
 import MagneticButton from "./animations/MagneticButton";
 
 const CONTEST_FORM_URL = "#contest"; // PLACEHOLDER
@@ -22,14 +21,20 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-[100dvh] flex items-end bg-background overflow-hidden">
-      {/* Blobs */}
-      <div className="blob blob-green w-48 h-48 top-[15%] right-[10%] opacity-60 blur-[60px]" />
-      <div className="blob blob-pink w-36 h-36 top-[30%] left-[5%] opacity-50 blur-[50px]" />
-      <div className="blob blob-yellow w-28 h-28 top-[20%] right-[35%] opacity-40 blur-[40px]" />
+    <section className="relative min-h-[100dvh] flex items-end overflow-hidden">
+      {/* Video background */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+      >
+        <source src={`${import.meta.env.BASE_URL}Lumin8Hero.mp4`} type="video/mp4" />
+      </video>
 
-      {/* Sparkles */}
-      <SparkleBackground />
+      {/* Dark overlay for text legibility */}
+      <div className="absolute inset-0 bg-black/60" />
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 pb-20 md:pb-28 pt-32 w-full">
         <h1
