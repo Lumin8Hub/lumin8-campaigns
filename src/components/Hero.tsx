@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 import { gsap } from "gsap";
+import SparkleBackground from "./animations/SparkleBackground";
+import MagneticButton from "./animations/MagneticButton";
 
 const CONTEST_FORM_URL = "#contest"; // PLACEHOLDER
 
@@ -7,8 +9,7 @@ const Hero = () => {
   useEffect(() => {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({ delay: 0.3 });
-      tl.from(".hero-label", { y: 30, opacity: 0, duration: 0.6, ease: "power3.out" })
-        .from(".hero-headline", { y: 40, opacity: 0, duration: 0.8, ease: "power3.out" }, "-=0.3")
+      tl.from(".hero-headline", { y: 40, opacity: 0, duration: 0.8, ease: "power3.out" })
         .from(".hero-subline", { y: 40, opacity: 0, duration: 0.8, ease: "power3.out" }, "-=0.4")
         .from(".hero-body", { y: 30, opacity: 0, duration: 0.6, ease: "power3.out" }, "-=0.4")
         .from(".hero-ctas", { y: 30, opacity: 0, duration: 0.6, ease: "power3.out" }, "-=0.3");
@@ -26,6 +27,9 @@ const Hero = () => {
       <div className="blob blob-green w-48 h-48 top-[15%] right-[10%] opacity-60 blur-[60px]" />
       <div className="blob blob-pink w-36 h-36 top-[30%] left-[5%] opacity-50 blur-[50px]" />
       <div className="blob blob-yellow w-28 h-28 top-[20%] right-[35%] opacity-40 blur-[40px]" />
+
+      {/* Sparkles */}
+      <SparkleBackground />
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 pb-20 md:pb-28 pt-32 w-full">
         <h1
@@ -46,14 +50,15 @@ const Hero = () => {
         </p>
 
         <div className="hero-ctas flex flex-col sm:flex-row gap-4 mb-4">
-          <a
+          <MagneticButton
+            as="a"
             href={CONTEST_FORM_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-primary text-primary-foreground font-heading font-bold px-8 py-4 rounded-full text-center hover:scale-[1.03] transition-transform duration-300"
+            className="bg-primary text-primary-foreground font-heading font-bold px-8 py-4 rounded-full text-center inline-block"
           >
             Win a Free Website →
-          </a>
+          </MagneticButton>
           <button
             onClick={() => scrollTo("#pricing")}
             className="border border-foreground/30 text-foreground font-heading font-semibold px-8 py-4 rounded-full hover:scale-[1.03] transition-transform duration-300"

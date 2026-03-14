@@ -1,5 +1,5 @@
 import { Check } from "lucide-react";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import SectionReveal from "./animations/SectionReveal";
 
 const CONTEST_FORM_URL = "#contest"; // PLACEHOLDER
 
@@ -20,11 +20,9 @@ const details = [
 ];
 
 const ContestSection = () => {
-  const sectionRef = useScrollAnimation();
-
   return (
-    <section ref={sectionRef as React.RefObject<HTMLElement>} id="contest" className="bg-primary py-24 px-6">
-      <div className="max-w-4xl mx-auto text-center">
+    <section id="contest" className="bg-primary py-24 px-6">
+      <SectionReveal className="max-w-4xl mx-auto text-center">
         <h2 className="section-headline text-primary-foreground mb-2">
           Win a Starter website package.
         </h2>
@@ -60,7 +58,7 @@ const ContestSection = () => {
         >
           Apply Now — It's Free →
         </a>
-      </div>
+      </SectionReveal>
     </section>
   );
 };

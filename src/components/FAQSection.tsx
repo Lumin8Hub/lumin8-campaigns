@@ -1,35 +1,23 @@
-import { useState, useRef, useCallback } from "react";
+import { useState } from "react";
 import { ChevronDown } from "lucide-react";
-import { gsap } from "gsap";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { faqItems } from "@/data/faq";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import SectionReveal from "./animations/SectionReveal";
 
 const FAQSection = () => {
-  const sectionRef = useScrollAnimation();
   const [openIndex, setOpenIndex] = useState<number | null>(null);
-  const contentRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const shouldReduceMotion = useReducedMotion();
 
-  const toggle = useCallback((index: number) => {
-    const content = contentRefs.current[index];
-    if (!content) return;
-
-    if (openIndex === index) {
-      gsap.to(content, { height: 0, opacity: 0, duration: 0.3, ease: "power2.inOut" });
-      setOpenIndex(null);
-    } else {
-      if (openIndex !== null && contentRefs.current[openIndex]) {
-        gsap.to(contentRefs.current[openIndex]!, { height: 0, opacity: 0, duration: 0.3 });
-      }
-      gsap.set(content, { height: "auto", opacity: 1 });
-      gsap.from(content, { height: 0, opacity: 0, duration: 0.4, ease: "power2.out" });
-      setOpenIndex(index);
-    }
-  }, [openIndex]);
+  const toggle = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
 
   return (
-    <section ref={sectionRef as React.RefObject<HTMLElement>} id="faq" className="bg-lumin8-off-white py-24 px-6">
+    <section id="faq" className="bg-lumin8-off-white py-24 px-6">
       <div className="max-w-3xl mx-auto">
-        <h2 className="section-headline text-lumin8-black mb-12">Questions? We've got answers.</h2>
+        <SectionReveal>
+          <h2 className="section-headline text-lumin8-black mb-12">Questions? We've got answers.</h2>
+        </SectionReveal>
 
         <div className="space-y-0">
           {faqItems.map((item, i) => (
@@ -40,19 +28,26 @@ const FAQSection = () => {
                 aria-expanded={openIndex === i}
               >
                 <span className="font-heading font-semibold text-lumin8-black pr-4">{item.question}</span>
-                <ChevronDown
-                  className={`w-5 h-5 text-lumin8-gray-600 shrink-0 transition-transform duration-300 ${
-                    openIndex === i ? "rotate-180" : ""
-                  }`}
-                />
+                <motion.div
+                  animate={{ rotate: openIndex === i ? 180 : 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <ChevronDown className="w-5 h-5 text-lumin8-gray-600 shrink-0" />
+                </motion.div>
               </button>
-              <div
-                ref={(el) => { contentRefs.current[i] = el; }}
-                className="overflow-hidden"
-                style={{ height: 0, opacity: 0 }}
-              >
-                <p className="pb-6 text-lumin8-gray-600 leading-relaxed">{item.answer}</p>
-              </div>
+              <AnimatePresence>
+                {openIndex === i && (
+                  <motion.div
+                    initial={shouldReduceMotion ? false : { height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                    className="overflow-hidden"
+                  >
+                    <p className="pb-6 text-lumin8-gray-600 leading-relaxed">{item.answer}</p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           ))}
         </div>

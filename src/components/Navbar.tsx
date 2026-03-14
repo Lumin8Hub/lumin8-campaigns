@@ -16,7 +16,7 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 100);
+    const onScroll = () => setScrolled(window.scrollY > 60);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -29,11 +29,15 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-5xl rounded-full px-6 py-3 flex items-center justify-between transition-all duration-500 ${
+      className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-5xl rounded-full px-6 py-3 flex items-center justify-between transition-all duration-300 ${
         scrolled
-          ? "bg-lumin8-black/60 backdrop-blur-xl border border-foreground/[0.08]"
+          ? "border border-foreground/[0.06]"
           : "bg-transparent"
       }`}
+      style={{
+        backdropFilter: scrolled ? "blur(12px)" : "none",
+        background: scrolled ? "rgba(13, 17, 23, 0.8)" : "transparent",
+      }}
     >
       <img src={logo} alt="Lumin8" className="h-8 w-auto" />
 
