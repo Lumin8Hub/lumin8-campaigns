@@ -54,7 +54,7 @@ const timeline = [
   {
     phase: "Phase 1 — Discovery",
     title: "Understanding the Vision",
-    description: "Deep dive into Earth Songfire's mission, target audience, and existing brand materials. Mapped out the information architecture and user journeys.",
+    description: "Deep dive into Earth Song Festival's mission, target audience, and existing brand materials. Mapped out the information architecture and user journeys.",
   },
   {
     phase: "Phase 2 — Content & Copy",
@@ -89,7 +89,7 @@ const EarthSong = () => (
             className="text-4xl md:text-6xl font-bold mb-6 leading-tight"
             style={{ fontFamily: '"DM Serif Display", serif', color: "#fff" }}
           >
-            Earth Songfire
+            Earth Song Festival
           </h1>
           <p className="text-lg md:text-xl text-white/70 max-w-2xl leading-relaxed font-body">
             A beautiful, nature-inspired digital presence for a holistic wellness practitioner
@@ -123,7 +123,7 @@ const EarthSong = () => (
                   className="text-5xl md:text-7xl font-bold mb-4 opacity-20"
                   style={{ fontFamily: '"DM Serif Display", serif', color: ACCENT }}
                 >
-                  Earth Songfire
+                  Earth Song Festival
                 </div>
                 <div className="text-sm text-white/30 font-mono">Healing · Community · Nature</div>
               </div>
@@ -153,7 +153,7 @@ const EarthSong = () => (
                 The Challenge
               </h2>
               <p className="text-white/60 leading-relaxed">
-                Earth Songfire had a growing community and a powerful brand story, but no
+                Earth Song Festival had a growing community and a powerful brand story, but no
                 digital home to match. Their existing web presence was fragmented — a mix
                 of social media profiles and a basic landing page that didn't communicate
                 the depth and warmth of their offerings. They needed a cohesive website
@@ -201,7 +201,7 @@ const EarthSong = () => (
     <section className="mx-6 rounded-xl mb-20 overflow-hidden">
       <TestimonialBand
         quote="Lumin8 delivered a beautiful, professional website that perfectly captures our brand. The process was seamless and fast."
-        author="Earth Songfire"
+        author="Earth Song Festival"
         role="Founder"
         accentColor={ACCENT}
         background="linear-gradient(135deg, #1a2e12, #2D5016)"

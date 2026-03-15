@@ -8,12 +8,12 @@ import GlowCard from "./animations/GlowCard";
 const studies = [
   {
     id: 1,
-    company: "Earth Songfire",
+    company: "Earth Song Festival",
     tag: "Website & Brand Identity",
     accentColor: "#B08D57",
     slug: "/work/earth-song",
     summary: "A nature-inspired digital presence for a holistic wellness practitioner.",
-    challenge: "Earth Songfire had a growing community but no cohesive digital home — just fragmented social profiles and a basic landing page.",
+    challenge: "Earth Song Festival had a growing community but no cohesive digital home — just fragmented social profiles and a basic landing page.",
     solution: "We designed a custom React website with a forest green and gold palette, DM Serif Display typography, and nature-inspired animations.",
     result: "3x increase in inquiries, a professional digital presence, and a platform that truly reflects the brand's warmth and authenticity.",
   },

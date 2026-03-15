@@ -9,7 +9,7 @@ import SectionReveal from "@/components/animations/SectionReveal";
 const caseStudies = [
   {
     slug: "earth-song",
-    company: "Earth Songfire",
+    company: "Earth Song Festival",
     description: "Nature-inspired website and brand identity for a holistic wellness community.",
     accentColor: "#2D5016",
     glowColor: "rgba(45,80,22,0.15)",

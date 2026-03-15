@@ -4,7 +4,7 @@ import TestimonialMarquee from "./animations/TestimonialMarquee";
 const testimonials = [
   {
     quote: "Lumin8 delivered a beautiful, professional website that perfectly captures our brand. The process was seamless and fast.",
-    name: "Earth Songfire",
+    name: "Earth Song Festival",
     title: "Founder",
   },
   {
