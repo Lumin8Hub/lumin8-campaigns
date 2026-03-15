@@ -8,6 +8,15 @@ import SectionReveal from "@/components/animations/SectionReveal";
 
 const caseStudies = [
   {
+    slug: "jillian-rodak",
+    company: "Jillian Rodak",
+    description:
+      "Personal brand website, competitor research, and vibe coding handoff for a career coach launching her own practice.",
+    accentColor: "#C07D2B",
+    glowColor: "rgba(192,125,43,0.15)",
+    tags: ["Personal Brand", "Solopreneur", "AI Handoff", "$100 Budget"],
+  },
+  {
     slug: "earth-song",
     company: "Earth Song Festival",
     description: "Nature-inspired website and brand identity for a holistic wellness community.",

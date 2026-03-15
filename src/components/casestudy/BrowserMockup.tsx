@@ -2,6 +2,8 @@ interface BrowserMockupProps {
   url: string;
   accentColor: string;
   frameVariant?: "dark-rounded" | "dark-sharp" | "light-rounded";
+  dotColors?: [string, string, string];
+  chromeBg?: string;
   children: React.ReactNode;
 }
 
@@ -33,6 +35,8 @@ const BrowserMockup = ({
   url,
   accentColor,
   frameVariant = "dark-rounded",
+  dotColors,
+  chromeBg,
   children,
 }: BrowserMockupProps) => {
   const frame = frameStyles[frameVariant];
@@ -47,11 +51,22 @@ const BrowserMockup = ({
       }
     >
       {/* Browser chrome */}
-      <div className={`${frame.chrome} px-4 py-3 flex items-center gap-3`}>
+      <div
+        className={`${frame.chrome} px-4 py-3 flex items-center gap-3`}
+        style={chromeBg ? { backgroundColor: chromeBg } : undefined}
+      >
         <div className="flex gap-2">
-          {frame.dots.map((dot, i) => (
-            <div key={i} className={`w-3 h-3 rounded-full ${dot}`} />
-          ))}
+          {dotColors
+            ? dotColors.map((color, i) => (
+                <div
+                  key={i}
+                  className="w-3 h-3 rounded-full"
+                  style={{ backgroundColor: color }}
+                />
+              ))
+            : frame.dots.map((dot, i) => (
+                <div key={i} className={`w-3 h-3 rounded-full ${dot}`} />
+              ))}
         </div>
         <div className="flex-1 flex justify-center">
           <div className={`${frame.urlBar} rounded-md px-4 py-1 text-xs font-mono max-w-xs truncate`}>

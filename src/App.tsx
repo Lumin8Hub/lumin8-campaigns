@@ -9,6 +9,7 @@ import WorkIndex from "./pages/work/WorkIndex.tsx";
 import EarthSong from "./pages/work/EarthSong.tsx";
 import UnapologeticallyJewish from "./pages/work/UnapologeticallyJewish.tsx";
 import Sportball from "./pages/work/Sportball.tsx";
+import JillianRodak from "./pages/work/JillianRodak.tsx";
 import OnboardingPage from "./pages/OnboardingPage.tsx";
 
 const queryClient = new QueryClient();
@@ -27,6 +28,7 @@ const App = () => (
           <Route path="/work/earth-song" element={<EarthSong />} />
           <Route path="/work/unapologetically-jewish" element={<UnapologeticallyJewish />} />
           <Route path="/work/sportball" element={<Sportball />} />
+          <Route path="/work/jillian-rodak" element={<JillianRodak />} />
           <Route path="/onboarding" element={<OnboardingPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
