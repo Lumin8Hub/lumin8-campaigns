@@ -10,9 +10,24 @@ interface Feature {
 interface FeatureGridProps {
   features: Feature[];
   accentColor: string;
+  accentGradient?: string;
+  cardBg?: string;
+  cardBorder?: string;
+  cardBorderHover?: string;
+  cardGlow?: string;
+  cardRadius?: string;
 }
 
-const FeatureGrid = ({ features, accentColor }: FeatureGridProps) => {
+const FeatureGrid = ({
+  features,
+  accentColor,
+  accentGradient,
+  cardBg = "rgba(255,255,255,0.02)",
+  cardBorder = "rgba(255,255,255,0.1)",
+  cardBorderHover,
+  cardGlow,
+  cardRadius = "12px",
+}: FeatureGridProps) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-60px" });
   const shouldReduceMotion = useReducedMotion();
@@ -25,11 +40,27 @@ const FeatureGrid = ({ features, accentColor }: FeatureGridProps) => {
           initial={shouldReduceMotion ? false : { opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: i * 0.1 }}
-          className="rounded-xl border border-white/10 p-6 bg-white/[0.02]"
+          className="group p-6 transition-all duration-300 hover:-translate-y-[3px]"
+          style={{
+            background: cardBg,
+            border: `1px solid ${cardBorder}`,
+            borderRadius: cardRadius,
+          }}
+          onMouseEnter={(e) => {
+            if (cardBorderHover) e.currentTarget.style.borderColor = cardBorderHover;
+            if (cardGlow) e.currentTarget.style.boxShadow = `0 12px 36px ${cardGlow}`;
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.borderColor = cardBorder;
+            e.currentTarget.style.boxShadow = "none";
+          }}
         >
           <div
             className="w-10 h-10 rounded-lg flex items-center justify-center mb-4"
-            style={{ backgroundColor: `${accentColor}20`, color: accentColor }}
+            style={{
+              background: accentGradient || `${accentColor}20`,
+              color: accentGradient ? "#fff" : accentColor,
+            }}
           >
             {feature.icon}
           </div>

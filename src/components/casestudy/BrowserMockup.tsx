@@ -1,34 +1,75 @@
 interface BrowserMockupProps {
   url: string;
   accentColor: string;
+  frameVariant?: "dark-rounded" | "dark-sharp" | "light-rounded";
   children: React.ReactNode;
 }
 
-const BrowserMockup = ({ url, accentColor, children }: BrowserMockupProps) => (
-  <div className="rounded-xl overflow-hidden border border-white/10 shadow-2xl">
-    {/* Browser chrome */}
-    <div className="bg-white/5 px-4 py-3 flex items-center gap-3 border-b border-white/10">
-      <div className="flex gap-2">
-        <div className="w-3 h-3 rounded-full bg-white/20" />
-        <div className="w-3 h-3 rounded-full bg-white/20" />
-        <div className="w-3 h-3 rounded-full bg-white/20" />
-      </div>
-      <div className="flex-1 flex justify-center">
-        <div className="bg-white/5 rounded-md px-4 py-1 text-xs text-white/40 font-mono max-w-xs truncate">
-          {url}
+const frameStyles = {
+  "dark-rounded": {
+    wrapper: "rounded-xl",
+    chrome: "bg-white/5 border-b border-white/10",
+    dots: ["bg-white/20", "bg-white/20", "bg-white/20"],
+    urlBar: "bg-white/5 text-white/40",
+    border: "border border-white/10",
+  },
+  "dark-sharp": {
+    wrapper: "rounded-none",
+    chrome: "bg-black border-b border-white/10",
+    dots: ["bg-white/20", "bg-white/20", "bg-white/20"],
+    urlBar: "bg-white/5 text-white/40",
+    border: "border border-white/10",
+  },
+  "light-rounded": {
+    wrapper: "rounded-xl",
+    chrome: "bg-[#f0f4f8] border-b border-black/5",
+    dots: ["bg-[#00A3E0]", "bg-[#E6007E]", "bg-gray-300"],
+    urlBar: "bg-white text-gray-500",
+    border: "border border-black/5",
+  },
+};
+
+const BrowserMockup = ({
+  url,
+  accentColor,
+  frameVariant = "dark-rounded",
+  children,
+}: BrowserMockupProps) => {
+  const frame = frameStyles[frameVariant];
+
+  return (
+    <div
+      className={`${frame.wrapper} overflow-hidden ${frame.border} shadow-2xl`}
+      style={
+        frameVariant === "light-rounded"
+          ? { boxShadow: `0 20px 60px ${accentColor}26` }
+          : undefined
+      }
+    >
+      {/* Browser chrome */}
+      <div className={`${frame.chrome} px-4 py-3 flex items-center gap-3`}>
+        <div className="flex gap-2">
+          {frame.dots.map((dot, i) => (
+            <div key={i} className={`w-3 h-3 rounded-full ${dot}`} />
+          ))}
+        </div>
+        <div className="flex-1 flex justify-center">
+          <div className={`${frame.urlBar} rounded-md px-4 py-1 text-xs font-mono max-w-xs truncate`}>
+            {url}
+          </div>
         </div>
       </div>
+      {/* Content area */}
+      <div
+        className="aspect-video relative overflow-hidden"
+        style={{
+          background: `linear-gradient(135deg, ${accentColor}15, ${accentColor}05)`,
+        }}
+      >
+        {children}
+      </div>
     </div>
-    {/* Content area */}
-    <div
-      className="aspect-video relative overflow-hidden"
-      style={{
-        background: `linear-gradient(135deg, ${accentColor}15, ${accentColor}05)`,
-      }}
-    >
-      {children}
-    </div>
-  </div>
-);
+  );
+};
 
 export default BrowserMockup;
