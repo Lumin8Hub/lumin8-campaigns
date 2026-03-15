@@ -267,7 +267,7 @@ const JillianRodak = () => {
         mutedColor={P.textMuted}
         bgColor={P.bgSection}
         paragraphs={[
-          "Jillian Rodak is a career strategist and professional coach based in the Greater Toronto Area. After years in human resources and career development, she was ready to launch her own coaching practice — helping professionals navigate pivotal career transitions, prepare for interviews, and build compelling resumes and cover letters.",
+          "Jillian Rodak is a career strategist and professional coach based in the Greater Toronto Area. After years in career development, she was ready to launch her own coaching practice — helping professionals navigate pivotal career transitions, prepare for interviews, and build compelling resumes and cover letters.",
           "Jillian had the expertise, the client pipeline starting to form, and the drive to build something of her own. What she needed was a partner who could translate her vision into a professional digital presence — quickly, affordably, and without locking her into an ongoing dependency on an agency to make every future update.",
         ]}
       />
