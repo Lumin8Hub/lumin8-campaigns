@@ -84,7 +84,7 @@ const SocialProofBar = () => {
               <img
                 src={client.logoUrl}
                 alt={client.name}
-                className="h-10 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                className="h-12 w-auto object-contain"
               />
             );
 
