@@ -1,44 +1,33 @@
-// Tally form integration utilities for Lumin8 Starter
+// Form integration utilities for Lumin8 Starter
 
-// ─── Form IDs — replace with actual Tally form IDs ─────────
+// ─── Tally Form IDs (onboarding only) ──────────────────────
 export const TALLY_FORMS = {
-  CONTEST_APPLICATION: "2ErX4g",
   CLIENT_ONBOARDING: "44jQjd",
 } as const;
 
-// ─── Shared popup options ──────────────────────────────────
-const basePopupOptions = {
-  width: 700,
-  emoji: { text: "\u{1F44B}", animation: "wave" },
-  autoClose: 3000,
-  showOnce: false,
-};
-
-// ─── Popup functions ───────────────────────────────────────
+// ─── HubSpot contest form ───────────────────────────────────
+// Opens via a custom DOM event; ContestFormModal listens for it.
+const HUBSPOT_FALLBACK_URL =
+  "https://5o9ln8.share-na3.hsforms.com/2WBLcaWnkRSOHASztAbIe4A";
 
 export function openContestForm(): void {
-  if (window.Tally) {
-    window.Tally.openPopup(TALLY_FORMS.CONTEST_APPLICATION, {
-      ...basePopupOptions,
-      overlay: true,
-      layout: "default",
-      onOpen: () => console.log("[Lumin8] Contest form opened"),
-      onClose: () => console.log("[Lumin8] Contest form closed"),
-      onSubmit: (payload: unknown) =>
-        console.log("[Lumin8] Contest form submitted", payload),
-    });
-  } else {
-    window.open(
-      `https://tally.so/r/${TALLY_FORMS.CONTEST_APPLICATION}`,
-      "_blank",
-    );
-  }
+  window.dispatchEvent(new CustomEvent("open-contest-form"));
+
+  // If the modal isn't mounted (shouldn't happen), fall back to opening the
+  // HubSpot share link in a new tab after a brief delay.
+  setTimeout(() => {
+    const modal = document.querySelector(".contest-form-modal");
+    if (!modal) {
+      window.open(HUBSPOT_FALLBACK_URL, "_blank");
+    }
+  }, 100);
 }
 
+// ─── Tally onboarding popup ─────────────────────────────────
 export function openOnboardingForm(): void {
   if (window.Tally) {
     window.Tally.openPopup(TALLY_FORMS.CLIENT_ONBOARDING, {
-      ...basePopupOptions,
+      width: 700,
       layout: "default",
       onOpen: () => console.log("[Lumin8] Onboarding form opened"),
       onSubmit: (payload: unknown) =>
@@ -52,7 +41,7 @@ export function openOnboardingForm(): void {
   }
 }
 
-// ─── Type declaration ──────────────────────────────────────
+// ─── Type declarations ──────────────────────────────────────
 declare global {
   interface Window {
     Tally?: {

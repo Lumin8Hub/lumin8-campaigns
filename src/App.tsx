@@ -11,6 +11,7 @@ import UnapologeticallyJewish from "./pages/work/UnapologeticallyJewish.tsx";
 import Sportball from "./pages/work/Sportball.tsx";
 import JillianRodak from "./pages/work/JillianRodak.tsx";
 import OnboardingPage from "./pages/OnboardingPage.tsx";
+import ContestFormModal from "./components/ContestFormModal.tsx";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +23,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter basename={baseUrl}>
+        <ContestFormModal />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/work" element={<WorkIndex />} />

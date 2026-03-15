@@ -125,23 +125,32 @@
   transform: translateY(0);
 }
 
-/* Tally Popup Frame Overrides */
-.tally-popup .tally-popup-overlay {
-  background-color: rgba(0, 0, 0, 0.7) !important;
-  backdrop-filter: blur(4px);
+/* HubSpot Form Overrides (inside contest modal) */
+.contest-form-modal .hs-form input,
+.contest-form-modal .hs-form textarea,
+.contest-form-modal .hs-form select {
+  background-color: #1A1A1A !important;
+  border: 1px solid #2A2A2A !important;
+  border-radius: 8px !important;
+  color: #fff !important;
+  padding: 0.625rem 0.75rem !important;
 }
 
-.tally-popup .tally-popup-container {
-  border-radius: 16px !important;
-  border: 1px solid rgba(45, 212, 191, 0.15) !important;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6) !important;
-  overflow: hidden !important;
+.contest-form-modal .hs-form label {
+  color: #E2E8F0 !important;
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
 }
 
-.tally-popup .tally-popup-close {
-  color: #94A3B8 !important;
+.contest-form-modal .hs-form .hs-button {
+  background-color: #78C9C0 !important;
+  color: #0D0D0D !important;
+  border: none !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+  padding: 0.75rem 1.5rem !important;
+  cursor: pointer !important;
 }
 
-.tally-popup .tally-popup-close:hover {
-  color: #FFFFFF !important;
+.contest-form-modal .hs-form .hs-button:hover {
+  background-color: #5FBAB0 !important;
 }
