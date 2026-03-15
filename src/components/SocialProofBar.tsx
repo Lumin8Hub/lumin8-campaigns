@@ -9,37 +9,37 @@ const clients = [
   {
     name: "YogenFruz",
     websiteUrl: "https://yogenfruz.com/",
-    logoUrl: "/logos/YogenFruz.svg",
+    logoUrl: "/logos/YogenFruz.png",
   },
   {
     name: "Sportball",
     websiteUrl: "https://sportball.com/",
-    logoUrl: "/logos/Sportball.svg",
+    logoUrl: "/logos/Sportball.png",
   },
   {
     name: "Acronym Solutions",
     websiteUrl: "https://acronymsolutions.com/",
-    logoUrl: "/logos/Acronym.svg",
+    logoUrl: "/logos/Acronym.png",
   },
   {
     name: "TZC",
     websiteUrl: "",
-    logoUrl: "/logos/TZC.svg",
+    logoUrl: "/logos/TZC.png",
   },
   {
     name: "Unapologetically Jewish",
     websiteUrl: "https://www.unapologetically-jewish.org/",
-    logoUrl: "/logos/uj.svg",
+    logoUrl: "/logos/uj.png",
   },
   {
     name: "Garage Door Beasts",
     websiteUrl: "https://garagedoorbeasts.ca/organization-landing-page/",
-    logoUrl: "/logos/GarageDoorBeasts.svg",
+    logoUrl: "/logos/GarageDoorBeasts.png",
   },
   {
     name: "Earth Song Festival",
     websiteUrl: "https://earthsongfestival.com/",
-    logoUrl: "/logos/EarthSongFestival.svg",
+    logoUrl: "/logos/EarthSongFestival.png",
   },
 ];
 
