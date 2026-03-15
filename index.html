@@ -3,6 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- GitHub Pages SPA: restore path from 404 redirect query string -->
+    <script>
+      (function() {
+        var params = new URLSearchParams(window.location.search);
+        var p = params.get('p');
+        if (p) {
+          var h = params.get('h') || '';
+          var search = p.includes('?') ? p.split('?').slice(1).join('?') : '';
+          var path = p.split('?')[0];
+          window.history.replaceState(
+            null, null,
+            path + (search ? '?' + search : '') + h
+          );
+        }
+      })();
+    </script>
     <meta property="og:title" content="Lumin8 Starter — Professional Websites Starting at $500 CAD" />
     <meta property="og:description" content="Get a custom, agency-quality website built by real marketers. AI-accelerated, human-refined. Starting at $500 CAD." />
     <meta name="twitter:card" content="summary_large_image" />
