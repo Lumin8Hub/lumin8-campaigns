@@ -2,8 +2,8 @@
 
 // ─── Form IDs — replace with actual Tally form IDs ─────────
 export const TALLY_FORMS = {
-  CONTEST_APPLICATION: "REPLACE_WITH_CONTEST_FORM_ID",
-  CLIENT_ONBOARDING: "REPLACE_WITH_ONBOARDING_FORM_ID",
+  CONTEST_APPLICATION: "2ErX4g",
+  CLIENT_ONBOARDING: "44jQjd",
 } as const;
 
 // ─── Shared popup options ──────────────────────────────────
