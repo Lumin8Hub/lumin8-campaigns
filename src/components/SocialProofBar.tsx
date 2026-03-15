@@ -132,7 +132,7 @@ const SocialProofBar = () => {
       className="fade-in-section bg-white border-t border-gray-200 py-12 md:py-16"
     >
       <div className="max-w-6xl mx-auto px-4">
-        <p className="font-serif italic text-lg md:text-2xl text-foreground text-center">
+        <p className="font-serif italic text-lg md:text-2xl text-center text-[#ed4c96]">
           Trusted by franchise brands, small businesses, events, and non-profits
         </p>
 
