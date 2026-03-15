@@ -116,7 +116,7 @@ const EarthSong = () => (
     <section className="px-6 pb-20">
       <div className="max-w-5xl mx-auto">
         <SectionReveal delay={0.2}>
-          <BrowserMockup url="earthsongfire.com" accentColor={ACCENT_GREEN}>
+          <BrowserMockup url="earthsongfestival.com" accentColor={ACCENT_GREEN}>
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="text-center px-8">
                 <div
