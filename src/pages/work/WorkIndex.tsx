@@ -5,26 +5,32 @@ import { motion, useReducedMotion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SectionReveal from "@/components/animations/SectionReveal";
-import GlowCard from "@/components/animations/GlowCard";
 
 const caseStudies = [
   {
     slug: "earth-song",
     company: "Earth Songfire",
-    tag: "Website & Brand Identity",
-    accentColor: "#B08D57",
-    summary:
-      "A nature-inspired digital presence for a holistic wellness practitioner — warm, grounding, and beautifully intentional.",
-    services: ["Custom Website", "Brand Identity", "SEO", "Content Strategy"],
+    description: "Nature-inspired website and brand identity for a holistic wellness community.",
+    accentColor: "#2D5016",
+    glowColor: "rgba(45,80,22,0.15)",
+    tags: ["Festival", "Ticketing", "React", "Supabase"],
   },
   {
     slug: "unapologetically-jewish",
     company: "Unapologetically Jewish",
-    tag: "Community Platform",
-    accentColor: "#CC0000",
-    summary:
-      "A bold, high-impact digital home for a vibrant community — designed to be as unapologetic as the movement it represents.",
-    services: ["Custom Website", "Brutalist Design", "Event Integration", "Brand Identity"],
+    description: "Bold community platform with e-commerce and donation integration.",
+    accentColor: "#DC2626",
+    glowColor: "rgba(220,38,38,0.15)",
+    tags: ["Nonprofit", "Activism", "E-Commerce", "Donations"],
+  },
+  {
+    slug: "sportball",
+    company: "Sportball",
+    description:
+      "Full-funnel rebrand, multi-location CMS, and performance marketing for a 20+ location children's sports franchise.",
+    accentColor: "#00A3E0",
+    glowColor: "rgba(0,163,224,0.15)",
+    tags: ["Rebrand", "Franchise", "CMS", "Performance Marketing"],
   },
 ];
 
@@ -53,49 +59,69 @@ const WorkIndex = () => {
               </p>
             </SectionReveal>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {caseStudies.map((study, i) => (
                 <motion.div
                   key={study.slug}
                   initial={shouldReduceMotion ? false : { opacity: 0, y: 40 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: i * 0.15, ease: [0.22, 1, 0.36, 1] }}
+                  transition={{ duration: 0.6, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
                 >
-                  <Link to={`/work/${study.slug}`} className="block group">
-                    <GlowCard glowColor={`${study.accentColor}14`}>
-                      <div className="rounded-xl border border-foreground/[0.08] bg-muted/30 p-8 transition-all duration-300 group-hover:border-foreground/20">
-                        {/* Header */}
-                        <div className="flex items-center gap-4 mb-4">
-                          <div
-                            className="w-14 h-14 rounded-lg shrink-0"
-                            style={{ backgroundColor: study.accentColor }}
-                          />
-                          <div>
-                            <span
-                              className="text-xs font-semibold uppercase tracking-wider"
-                              style={{ color: study.accentColor }}
-                            >
-                              {study.tag}
-                            </span>
-                            <h2 className="text-2xl font-heading font-bold text-foreground">
-                              {study.company}
-                            </h2>
-                          </div>
-                        </div>
+                  <Link to={`/work/${study.slug}`} className="block group h-full">
+                    <div
+                      className="rounded-xl bg-muted/30 overflow-hidden transition-all duration-300 group-hover:shadow-lg h-full flex flex-col"
+                      style={{
+                        border: "1px solid rgba(255,255,255,0.08)",
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.boxShadow = `0 12px 40px ${study.glowColor}`;
+                        e.currentTarget.style.borderColor = `${study.accentColor}40`;
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.boxShadow = "none";
+                        e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)";
+                      }}
+                    >
+                      {/* Colored top border */}
+                      <div
+                        className="h-[3px] w-full"
+                        style={{ backgroundColor: study.accentColor }}
+                      />
 
-                        {/* Summary */}
-                        <p className="text-lumin8-gray-400 mb-6 leading-relaxed">
-                          {study.summary}
+                      {/* Screenshot placeholder */}
+                      <div
+                        className="aspect-video w-full flex items-center justify-center"
+                        style={{
+                          background: `linear-gradient(135deg, ${study.accentColor}10, ${study.accentColor}05)`,
+                        }}
+                      >
+                        <span
+                          className="text-3xl font-heading font-bold opacity-15"
+                          style={{ color: study.accentColor }}
+                        >
+                          {study.company}
+                        </span>
+                      </div>
+
+                      <div className="p-6 flex flex-col flex-1">
+                        {/* Client name */}
+                        <h2 className="text-xl font-heading font-bold text-foreground mb-2">
+                          {study.company}
+                        </h2>
+
+                        {/* Description */}
+                        <p className="text-sm text-lumin8-gray-400 leading-relaxed mb-4 flex-1">
+                          {study.description}
                         </p>
 
-                        {/* Service tags */}
-                        <div className="flex flex-wrap gap-2 mb-6">
-                          {study.services.map((service) => (
+                        {/* Tags */}
+                        <div className="flex flex-wrap gap-2 mb-4">
+                          {study.tags.map((tag) => (
                             <span
-                              key={service}
-                              className="text-xs font-mono px-2.5 py-1 rounded-full border border-foreground/10 text-foreground/50"
+                              key={tag}
+                              className="text-[11px] font-mono px-2 py-0.5 rounded-full border border-foreground/10 text-foreground/50"
                             >
-                              {service}
+                              {tag}
                             </span>
                           ))}
                         </div>
@@ -105,11 +131,11 @@ const WorkIndex = () => {
                           className="inline-flex items-center gap-2 text-sm font-semibold transition-transform group-hover:translate-x-1"
                           style={{ color: study.accentColor }}
                         >
-                          View Case Study
+                          Read Case Study
                           <ArrowRight className="w-4 h-4" />
                         </div>
                       </div>
-                    </GlowCard>
+                    </div>
                   </Link>
                 </motion.div>
               ))}

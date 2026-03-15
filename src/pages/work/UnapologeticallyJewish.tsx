@@ -200,15 +200,13 @@ const UnapologeticallyJewish = () => (
     </section>
 
     {/* Testimonial */}
-    <section
-      className="mx-6 rounded-xl mb-20"
-      style={{ backgroundColor: `${ACCENT_RED}15` }}
-    >
+    <section className="mx-6 rounded-xl mb-20 overflow-hidden">
       <TestimonialBand
         quote="Lumin8 understood exactly what we needed. The website they built has been a game-changer for our community engagement."
         author="Matt"
         role="Founder, Unapologetically Jewish"
-        accentColor={ACCENT_RED}
+        accentColor="#fff"
+        background="#DC2626"
       />
     </section>
 

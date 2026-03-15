@@ -198,15 +198,13 @@ const EarthSong = () => (
     </section>
 
     {/* Testimonial */}
-    <section
-      className="mx-6 rounded-xl mb-20"
-      style={{ backgroundColor: `${ACCENT_GREEN}15` }}
-    >
+    <section className="mx-6 rounded-xl mb-20 overflow-hidden">
       <TestimonialBand
         quote="Lumin8 delivered a beautiful, professional website that perfectly captures our brand. The process was seamless and fast."
         author="Earth Songfire"
         role="Founder"
         accentColor={ACCENT}
+        background="linear-gradient(135deg, #1a2e12, #2D5016)"
       />
     </section>
 
