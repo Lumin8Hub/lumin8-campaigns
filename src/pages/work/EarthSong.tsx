@@ -117,7 +117,26 @@ const EarthSong = () => (
       <div className="max-w-5xl mx-auto">
         <SectionReveal delay={0.2}>
           <BrowserMockup url="earthsongfestival.com" accentColor={ACCENT_GREEN}>
-            <div className="absolute inset-0 flex items-center justify-center">
+            <video
+              className="absolute inset-0 w-full h-full object-cover"
+              autoPlay
+              loop
+              muted
+              playsInline
+              onError={(e) => {
+                const target = e.currentTarget;
+                target.style.display = "none";
+                const fallback = target.nextElementSibling as HTMLElement;
+                if (fallback) fallback.style.display = "flex";
+              }}
+            >
+              <source src={`${import.meta.env.BASE_URL}videos/earth-song-scroll.mp4`} type="video/mp4" />
+            </video>
+            {/* Fallback if video fails to load */}
+            <div
+              className="absolute inset-0 items-center justify-center"
+              style={{ display: "none" }}
+            >
               <div className="text-center px-8">
                 <div
                   className="text-5xl md:text-7xl font-bold mb-4 opacity-20"
