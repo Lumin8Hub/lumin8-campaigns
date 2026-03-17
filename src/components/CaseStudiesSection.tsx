@@ -4,14 +4,18 @@ import { motion, AnimatePresence, useInView, useReducedMotion } from "framer-mot
 import { ArrowRight, ChevronDown } from "lucide-react";
 import SectionReveal from "./animations/SectionReveal";
 import GlowCard from "./animations/GlowCard";
+import SectionCTA from "./SectionCTA";
 
 const studies = [
   {
     id: 1,
     company: "Earth Song Festival",
     tag: "Website & Brand Identity",
-    accentColor: "#B08D57",
+    accentColor: "#fde065",
+    textColor: "#1a1a1a",
     slug: "/work/earth-song",
+    logoUrl: "/logos/EarthSongFestival.png",
+    screenshotUrl: "/screenshots/earth-song-festival-site.png",
     summary: "A nature-inspired digital presence for a holistic wellness practitioner.",
     challenge: "Earth Song Festival had a growing community but no cohesive digital home — just fragmented social profiles and a basic landing page.",
     solution: "We designed a custom React website with a forest green and gold palette, DM Serif Display typography, and nature-inspired animations.",
@@ -21,8 +25,10 @@ const studies = [
     id: 2,
     company: "Sportball",
     tag: "Rebrand & Digital Transformation",
-    accentColor: "#00A3E0",
+    accentColor: "#2DD4BF",
+    textColor: "#1a1a1a",
     slug: "/work/sportball",
+    logoUrl: "/logos/Sportball.png",
     summary: "Full-funnel rebrand, multi-location CMS, and performance marketing for a 20+ location franchise network.",
     challenge: "Following an acquisition, Sportball needed a full rebrand and marketing transformation to unify their 20+ franchise locations.",
     solution: "We led the rebrand, built a multi-location CMS, and deployed a performance marketing engine that cut CAC by over 60%.",
@@ -32,8 +38,10 @@ const studies = [
     id: 3,
     company: "Unapologetically Jewish",
     tag: "Community Platform",
-    accentColor: "#CC0000",
+    accentColor: "#ed4c96",
+    textColor: "#ffffff",
     slug: "/work/unapologetically-jewish",
+    logoUrl: "/logos/uj.png",
     summary: "A bold, high-impact digital home for a vibrant community brand.",
     challenge: "UJ had built an incredible community through social media but lacked a dedicated digital home that matched their bold brand energy.",
     solution: "We built a high-contrast, brutalist-inspired website with Oswald typography and a stark red, black, and white palette.",
@@ -80,10 +88,11 @@ const CaseStudiesSection = () => {
                 className={`cursor-pointer rounded-xl border overflow-hidden ${
                   isExpanded
                     ? "col-span-1 md:col-span-3 border-2"
-                    : "border-foreground/[0.08] bg-muted/30"
+                    : "border-foreground/[0.08]"
                 }`}
                 style={{
                   borderColor: isExpanded ? study.accentColor : undefined,
+                  backgroundColor: isExpanded ? undefined : study.accentColor,
                 }}
               >
                 {isExpanded ? (
@@ -97,6 +106,8 @@ const CaseStudiesSection = () => {
             );
           })}
         </div>
+
+        <SectionCTA text="Let's Build Your Website" />
       </div>
     </section>
   );
@@ -113,23 +124,46 @@ const CardContent = ({
 }) => (
   <>
     <div className="p-6">
-      <div className="flex items-center gap-4 mb-3">
-        <div
-          className="w-12 h-12 rounded-lg shrink-0"
-          style={{ backgroundColor: study.accentColor }}
+      <div className="flex flex-col items-center gap-4 mb-3">
+        <img
+          src={study.logoUrl}
+          alt={`${study.company} logo`}
+          className="h-16 w-auto object-contain"
         />
-        <div>
+        <div className="text-center">
           <span
             className="text-xs font-semibold uppercase tracking-wider"
-            style={{ color: study.accentColor }}
+            style={{ color: isExpanded ? study.accentColor : study.textColor }}
           >
             {study.tag}
           </span>
-          <h3 className="text-xl font-heading font-bold text-foreground">{study.company}</h3>
+          <h3
+            className="text-xl font-heading font-bold"
+            style={{ color: isExpanded ? undefined : study.textColor }}
+          >
+            {study.company}
+          </h3>
         </div>
       </div>
-      <p className="text-lumin8-gray-400 mt-2">{study.summary}</p>
-      <div className="flex items-center gap-2 mt-4 text-sm text-lumin8-gray-400">
+      <p
+        className="mt-2"
+        style={{ color: isExpanded ? undefined : study.textColor, opacity: isExpanded ? 0.7 : 0.85 }}
+      >
+        {study.summary}
+      </p>
+
+      {/* Earth Song Festival screenshot */}
+      {study.screenshotUrl && !isExpanded && (
+        <div className="mt-4 rounded-lg overflow-hidden border border-black/10">
+          <img
+            src={study.screenshotUrl}
+            alt={`${study.company} website screenshot`}
+            className="w-full h-auto object-cover"
+          />
+        </div>
+      )}
+
+      <div className="flex items-center gap-2 mt-4 text-sm" style={{ color: isExpanded ? undefined : study.textColor, opacity: 0.7 }}>
         <span>{isExpanded ? "Click to collapse" : "Click to expand"}</span>
         <motion.div
           animate={{ rotate: isExpanded ? 180 : 0 }}
@@ -150,6 +184,17 @@ const CardContent = ({
           className="px-6 pb-6"
         >
           <div className="border-t border-foreground/10 pt-6 mt-2">
+            {/* Screenshot in expanded view for Earth Song */}
+            {study.screenshotUrl && (
+              <div className="mb-6 rounded-lg overflow-hidden border border-foreground/10">
+                <img
+                  src={study.screenshotUrl}
+                  alt={`${study.company} website screenshot`}
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+            )}
+
             <div className="grid md:grid-cols-3 gap-6">
               <div>
                 <h4 className="text-sm font-semibold text-foreground/60 uppercase tracking-wider mb-2">

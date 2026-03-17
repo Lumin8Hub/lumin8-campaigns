@@ -46,13 +46,23 @@ const clients = [
     websiteUrl: "",
     logoUrl: "/logos/ScentIt.png",
   },
+  {
+    name: "CCNY",
+    websiteUrl: "",
+    logoUrl: "/logos/ccny-logo.png",
+  },
+  {
+    name: "LightHouse1Eighty",
+    websiteUrl: "",
+    logoUrl: "/logos/lighthouse1eighty-logo.png",
+  },
 ];
 
 function getVisibleCount() {
-  if (typeof window === "undefined") return 3;
-  if (window.innerWidth >= 1024) return 3;
-  if (window.innerWidth >= 640) return 2;
-  return 1;
+  if (typeof window === "undefined") return 5;
+  if (window.innerWidth >= 1024) return 5;
+  if (window.innerWidth >= 640) return 3;
+  return 2;
 }
 
 const SocialProofBar = () => {
@@ -62,7 +72,6 @@ const SocialProofBar = () => {
   const [isPaused, setIsPaused] = useState(false);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
-  // Track viewport breakpoint changes
   useEffect(() => {
     const mqDesktop = window.matchMedia("(min-width: 1024px)");
     const mqTablet = window.matchMedia("(min-width: 640px)");
@@ -81,13 +90,10 @@ const SocialProofBar = () => {
     };
   }, []);
 
-  // Auto-advance interval
+  // Advance by one logo every 2 seconds
   const advance = useCallback(() => {
-    setCurrentIndex((prev) => {
-      const next = prev + visibleCount;
-      return next >= clients.length ? 0 : next;
-    });
-  }, [visibleCount]);
+    setCurrentIndex((prev) => (prev + 1) % clients.length);
+  }, []);
 
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia(
@@ -99,7 +105,7 @@ const SocialProofBar = () => {
       return;
     }
 
-    intervalRef.current = setInterval(advance, 3000);
+    intervalRef.current = setInterval(advance, 2000);
     return () => {
       if (intervalRef.current) clearInterval(intervalRef.current);
     };
@@ -124,6 +130,8 @@ const SocialProofBar = () => {
     return () => observer.disconnect();
   }, []);
 
+  // Duplicate logos for seamless infinite scroll
+  const extendedClients = [...clients, ...clients];
   const translateX = -(currentIndex * (100 / visibleCount));
 
   return (
@@ -147,22 +155,23 @@ const SocialProofBar = () => {
             aria-live="polite"
             style={{
               transform: `translateX(${translateX}%)`,
-              transition: "transform 500ms ease-in-out",
+              transition: "transform 600ms ease-in-out",
             }}
           >
-            {clients.map((client) => {
+            {extendedClients.map((client, idx) => {
               const img = (
                 <img
                   src={client.logoUrl}
                   alt={client.name}
-                  className="max-h-14 md:max-h-16 w-auto object-contain"
+                  className="h-12 md:h-14 w-auto object-contain"
+                  style={{ minHeight: "48px" }}
                 />
               );
 
               return (
                 <div
-                  key={client.name}
-                  className="flex-shrink-0 flex items-center justify-center px-8 md:px-12"
+                  key={`${client.name}-${idx}`}
+                  className="flex-shrink-0 flex items-center justify-center px-6 md:px-10"
                   style={{ minWidth: `${100 / visibleCount}%` }}
                 >
                   {client.websiteUrl ? (

@@ -1,4 +1,5 @@
 import SectionReveal from "./animations/SectionReveal";
+import SectionCTA from "./SectionCTA";
 
 const AboutSection = () => {
   return (
@@ -35,6 +36,8 @@ const AboutSection = () => {
               <p className="font-heading font-bold text-lumin8-black mt-1">Clients across Toronto, Montreal & NYC</p>
             </div>
           </div>
+
+          <SectionCTA text="Start Your Project" />
         </SectionReveal>
       </div>
     </section>
