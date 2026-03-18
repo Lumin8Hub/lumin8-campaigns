@@ -21,12 +21,12 @@ const features = [
   {
     icon: <Leaf className="w-5 h-5" />,
     title: "Nature-Inspired Design",
-    description: "Earth tones, organic shapes, and flowing layouts that reflect the brand's connection to nature and healing.",
+    description: "Earth tones, warm typography, and an immersive hero video that reflect the brand's connection to nature and ceremony.",
   },
   {
     icon: <Music className="w-5 h-5" />,
-    title: "Event Integration",
-    description: "Embedded calendar and registration system for workshops, sound healing sessions, and community gatherings.",
+    title: "Ticketing & Registration",
+    description: "Tiered ticketing with early-bird pricing, a digital waiver signing system, and integrated email capture for festival updates.",
   },
   {
     icon: <Smartphone className="w-5 h-5" />,
@@ -36,12 +36,12 @@ const features = [
   {
     icon: <Palette className="w-5 h-5" />,
     title: "Custom Brand Identity",
-    description: "Cohesive visual language with a forest green and gold palette that communicates warmth and authenticity.",
+    description: "Cohesive visual language with a forest green, gold, and warm cream palette that communicates warmth and authenticity.",
   },
   {
     icon: <Globe className="w-5 h-5" />,
     title: "SEO Foundation",
-    description: "Optimized meta tags, structured data, and fast page loads to improve organic search visibility.",
+    description: "Optimized meta tags, Open Graph integration, and fast page loads to support organic search visibility.",
   },
   {
     icon: <Zap className="w-5 h-5" />,
@@ -64,7 +64,7 @@ const timeline = [
   {
     phase: "Phase 3 — Design & Build",
     title: "Bringing It to Life",
-    description: "Custom React website with nature-inspired animations, warm typography using DM Serif Display, and a palette of forest greens and golds.",
+    description: "Custom React website with an immersive hero video, warm typography using Cormorant Garamond, and a palette of forest greens, golds, and warm cream.",
   },
   {
     phase: "Phase 4 — Review & Launch",
@@ -92,14 +92,14 @@ const EarthSong = () => (
             Earth Song Festival
           </h1>
           <p className="text-lg md:text-xl text-white/70 max-w-2xl leading-relaxed font-body">
-            A beautiful, nature-inspired digital presence for a holistic wellness practitioner
-            — designed to feel as grounding as the services it represents.
+            A nature-inspired digital home for a ceremonial festival retreat
+            — designed to feel as grounding as the gathering it represents.
           </p>
         </SectionReveal>
 
         {/* Tags */}
         <div className="flex flex-wrap gap-3 mt-8">
-          {["Website Design", "Brand Identity", "SEO", "Content Strategy"].map((tag) => (
+          {["Website Design", "Brand Identity", "Content Strategy", "Integrations"].map((tag) => (
             <span
               key={tag}
               className="text-xs font-mono px-3 py-1.5 rounded-full border"
@@ -176,7 +176,7 @@ const EarthSong = () => (
                 digital home to match. Their existing web presence was fragmented — a mix
                 of social media profiles and a basic landing page that didn't communicate
                 the depth and warmth of their offerings. They needed a cohesive website
-                that could serve as a hub for events, connect with their audience, and
+                that could serve as the digital home for their festival retreat, connect with their audience, and
                 reflect the grounded, nature-focused essence of their brand.
               </p>
             </div>
@@ -190,10 +190,10 @@ const EarthSong = () => (
               <p className="text-white/60 leading-relaxed">
                 We designed and built a custom React website that feels like stepping into
                 a forest clearing — warm, inviting, and intentional. The site uses a forest
-                green and gold palette, DM Serif Display typography for an organic feel,
-                and subtle nature-inspired animations. Every section was crafted to guide
-                visitors naturally from discovery to action, with event integration and
-                clear calls-to-action throughout.
+                green and gold palette with warm cream tones, Cormorant Garamond typography for an organic, elegant feel,
+                and an immersive hero video with subtle entrance animations. Every section was crafted to guide
+                visitors naturally from discovery to action, with tiered ticketing, email capture,
+                and clear calls-to-action throughout.
               </p>
             </div>
           </div>
@@ -220,8 +220,8 @@ const EarthSong = () => (
     <section className="mx-6 rounded-xl mb-20 overflow-hidden">
       <TestimonialBand
         quote="Lumin8 delivered a beautiful, professional website that perfectly captures our brand. The process was seamless and fast."
-        author="Earth Song Festival"
-        role="Founder"
+        author="Shannon Leroux"
+        role="Earth Song Festival Founder"
         accentColor={ACCENT}
         background="linear-gradient(135deg, #1a2e12, #2D5016)"
       />

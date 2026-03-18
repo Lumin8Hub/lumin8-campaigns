@@ -16,10 +16,10 @@ const studies = [
     slug: "/work/earth-song",
     logoUrl: "/logos/EarthSongFestival.png",
     screenshotUrl: "/screenshots/earth-song-festival-site.png",
-    summary: "A nature-inspired digital presence for a holistic wellness practitioner.",
+    summary: "A nature-inspired digital presence for a ceremonial festival retreat.",
     challenge: "Earth Song Festival had a growing community but no cohesive digital home — just fragmented social profiles and a basic landing page.",
-    solution: "We designed a custom React website with a forest green and gold palette, DM Serif Display typography, and nature-inspired animations.",
-    result: "3x increase in inquiries, a professional digital presence, and a platform that truly reflects the brand's warmth and authenticity.",
+    solution: "We designed a custom React website with a forest green, gold, and cream palette, Cormorant Garamond typography, and an immersive video hero.",
+    result: "A significant increase in inquiries, a professional digital presence, and a platform that truly reflects the brand's warmth and authenticity.",
   },
   {
     id: 2,

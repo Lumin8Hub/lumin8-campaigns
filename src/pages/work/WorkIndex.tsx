@@ -19,10 +19,10 @@ const caseStudies = [
   {
     slug: "earth-song",
     company: "Earth Song Festival",
-    description: "Nature-inspired website and brand identity for a holistic wellness community.",
+    description: "Nature-inspired website and brand identity for a ceremonial festival retreat.",
     accentColor: "#2D5016",
     glowColor: "rgba(45,80,22,0.15)",
-    tags: ["Festival", "Ticketing", "React", "Supabase"],
+    tags: ["Festival", "Ticketing", "React", "Supabase", "MailerLite"],
   },
   {
     slug: "unapologetically-jewish",
