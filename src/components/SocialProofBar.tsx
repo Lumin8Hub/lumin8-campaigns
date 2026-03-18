@@ -141,7 +141,7 @@ const SocialProofBar = () => {
     >
       <div className="max-w-6xl mx-auto px-4">
         <p className="font-serif italic text-lg md:text-2xl text-center text-[#ed4c96]">
-          Trusted by franchise brands, small businesses, events, and non-profits
+          Trusted by Canadian Businesses
         </p>
 
         <div
