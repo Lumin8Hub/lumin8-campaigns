@@ -1,5 +1,5 @@
-import { motion, useReducedMotion } from "framer-motion";
-import GlowCard from "./GlowCard";
+import { useState, useEffect, useCallback } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface Testimonial {
   quote: string;
@@ -12,55 +12,83 @@ interface TestimonialMarqueeProps {
 }
 
 const TestimonialMarquee = ({ testimonials }: TestimonialMarqueeProps) => {
-  const shouldReduceMotion = useReducedMotion();
-  const doubled = [...testimonials, ...testimonials];
+  const [active, setActive] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
-  if (shouldReduceMotion) {
-    return (
-      <div className="grid md:grid-cols-3 gap-6">
-        {testimonials.map((t, i) => (
-          <TestimonialCard key={i} {...t} />
-        ))}
-      </div>
-    );
-  }
+  const next = useCallback(() => {
+    setActive((prev) => (prev + 1) % testimonials.length);
+  }, [testimonials.length]);
+
+  const prev = useCallback(() => {
+    setActive((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  }, [testimonials.length]);
+
+  // Auto-advance every 5 seconds
+  useEffect(() => {
+    if (isPaused) return;
+    const timer = setInterval(next, 5000);
+    return () => clearInterval(timer);
+  }, [next, isPaused]);
+
+  const t = testimonials[active];
 
   return (
-    <div className="overflow-hidden relative">
-      {/* Fade edges */}
-      <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-background to-transparent z-10" />
-      <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-background to-transparent z-10" />
+    <div
+      className="relative"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
+      {/* Testimonial card */}
+      <div className="max-w-2xl mx-auto text-center">
+        <div
+          key={active}
+          className="bg-muted/30 rounded-2xl p-10 md:p-12 border border-foreground/[0.06] animate-fade-in"
+        >
+          <span className="text-4xl text-primary font-serif leading-none">&ldquo;</span>
+          <p className="text-foreground/80 leading-relaxed mt-2 mb-6 text-lg">{t.quote}</p>
+          <div>
+            <p className="font-heading font-bold text-foreground">{t.name}</p>
+            <p className="text-lumin8-gray-400 text-sm">{t.title}</p>
+          </div>
+        </div>
+      </div>
 
-      <motion.div
-        className="flex gap-6 hover:[animation-play-state:paused]"
-        animate={{ x: [0, `-${testimonials.length * 50}%`] }}
-        transition={{
-          x: {
-            repeat: Infinity,
-            repeatType: "loop",
-            duration: 25,
-            ease: "linear",
-          },
-        }}
-        style={{ width: "max-content" }}
-      >
-        {doubled.map((t, i) => (
-          <TestimonialCard key={i} {...t} />
-        ))}
-      </motion.div>
+      {/* Navigation arrows */}
+      {testimonials.length > 1 && (
+        <div className="flex items-center justify-center gap-6 mt-6">
+          <button
+            onClick={prev}
+            className="p-2 rounded-full border border-foreground/10 text-foreground/60 hover:text-foreground hover:border-foreground/30 transition-colors"
+            aria-label="Previous testimonial"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+
+          {/* Dots */}
+          <div className="flex gap-2">
+            {testimonials.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setActive(i)}
+                className={`w-2.5 h-2.5 rounded-full transition-colors ${
+                  i === active ? "bg-primary" : "bg-foreground/20"
+                }`}
+                aria-label={`Go to testimonial ${i + 1}`}
+              />
+            ))}
+          </div>
+
+          <button
+            onClick={next}
+            className="p-2 rounded-full border border-foreground/10 text-foreground/60 hover:text-foreground hover:border-foreground/30 transition-colors"
+            aria-label="Next testimonial"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
+        </div>
+      )}
     </div>
   );
 };
-
-const TestimonialCard = ({ quote, name, title }: Testimonial) => (
-  <GlowCard className="bg-muted/30 rounded-2xl p-8 border border-foreground/[0.06] max-w-[360px] shrink-0">
-    <span className="text-4xl text-primary font-serif leading-none">"</span>
-    <p className="text-foreground/80 leading-relaxed mt-2 mb-6">{quote}</p>
-    <div>
-      <p className="font-heading font-bold text-foreground">{name}</p>
-      <p className="text-lumin8-gray-400 text-sm">{title}</p>
-    </div>
-  </GlowCard>
-);
 
 export default TestimonialMarquee;
