@@ -1,75 +1,87 @@
-import { Globe, Heart, Megaphone, Shield, Smartphone, Users } from "lucide-react";
+import { Globe, Megaphone, Shield, Smartphone, Users, Wrench } from "lucide-react";
 import CaseStudyLayout from "@/components/casestudy/CaseStudyLayout";
 import BrowserMockup from "@/components/casestudy/BrowserMockup";
 import StatsBar from "@/components/casestudy/StatsBar";
 import FeatureGrid from "@/components/casestudy/FeatureGrid";
 import Timeline from "@/components/casestudy/Timeline";
 import TestimonialBand from "@/components/casestudy/TestimonialBand";
+import ProseSection from "@/components/casestudy/ProseSection";
+import PullQuote from "@/components/casestudy/PullQuote";
 import SectionReveal from "@/components/animations/SectionReveal";
 
 const ACCENT_RED = "#CC0000";
 const ACCENT_WHITE = "#FFFFFF";
 
 const stats = [
-  { value: "5x", label: "Community engagement" },
   { value: "10", label: "Days to launch" },
+  { value: "5x", label: "Engagement increase" },
   { value: "100%", label: "Mobile responsive" },
   { value: "24/7", label: "Always online" },
 ];
 
 const features = [
   {
-    icon: <Users className="w-5 h-5" />,
-    title: "Community Hub",
-    description: "Centralized platform connecting community members with events, resources, and each other.",
-  },
-  {
     icon: <Megaphone className="w-5 h-5" />,
-    title: "Bold Brand Voice",
-    description: "Unapologetic design language with high-contrast red, black, and white that commands attention.",
+    title: "Fighter's Voice & Media Hub",
+    description:
+      "Matt's brand language front and centre — video embeds from CPAC appearances, X clips, and National Post op-eds surfaced in one scroll.",
   },
   {
-    icon: <Heart className="w-5 h-5" />,
-    title: "Event Management",
-    description: "Integrated event listings and registration flows for community gatherings and cultural events.",
+    icon: <Wrench className="w-5 h-5" />,
+    title: "Action Toolkit",
+    description:
+      "Click-and-send email campaigns targeting RCMP and politicians, Donorbox fundraising, Eventbrite event flows, and Tally intake forms — all one tap away.",
+  },
+  {
+    icon: <Users className="w-5 h-5" />,
+    title: "Community Mobilization Hub",
+    description:
+      "Event listings, legal-push sign-ups, and rapid-response callouts that turn followers into foot soldiers when the next crisis hits.",
   },
   {
     icon: <Shield className="w-5 h-5" />,
-    title: "Secure & Fast",
-    description: "Static React build with zero server dependencies — fast, secure, and impossible to hack.",
+    title: "Secure & Lightning-Fast",
+    description:
+      "Static React build with zero server dependencies. No databases to breach, no downtime to exploit. The site stays up when it matters most.",
   },
   {
     icon: <Globe className="w-5 h-5" />,
-    title: "SEO & Discovery",
-    description: "Optimized for search to help community members and allies find the platform organically.",
+    title: "SEO & Organic Reach",
+    description:
+      "Search-optimized so allies — and critics — discover the uncomfortable truths Matt publishes. Every page structured for Google visibility.",
   },
   {
     icon: <Smartphone className="w-5 h-5" />,
-    title: "Mobile-First Design",
-    description: "Designed for the way people actually use the web — on their phones, on the go.",
+    title: "Mobile-First Merch & Pride",
+    description:
+      "Shopify storefront integration with seamless redirects. Supporters grab UJ merch on their phones between scrolling Matt's latest posts.",
   },
 ];
 
 const timeline = [
   {
-    phase: "Phase 1 — Brief",
-    title: "Defining the Mission",
-    description: "Understood Matt's vision for a digital home that's as bold and unapologetic as the community it serves. Mapped key user journeys.",
+    phase: "Phase 1 — Discovery",
+    title: "Understanding the Fighter",
+    description:
+      "Deep dive into Matt's world: his X presence, CPAC clips, police-accountability campaigns, and the Known to the Police project. We mapped every action a visitor should take.",
   },
   {
-    phase: "Phase 2 — Content",
-    title: "Writing With Purpose",
-    description: "Crafted copy that balances strength with warmth — proud, inclusive, and action-oriented. Every word reviewed by the community leader.",
+    phase: "Phase 2 — Design Sprint",
+    title: "Brutalism With a Purpose",
+    description:
+      "Red, black, white. Oswald uppercase. No soft edges. We designed a visual system that mirrors Matt's personality — every screen reviewed over WhatsApp while Matt was in Israel.",
   },
   {
-    phase: "Phase 3 — Build",
-    title: "Brutalist Meets Functional",
-    description: "Custom React build with a high-contrast palette, Oswald headings for impact, and clean layouts that prioritize readability and action.",
+    phase: "Phase 3 — Build & Iterate",
+    title: "Rapid Cycles, Real Activist",
+    description:
+      "Matt hunts, travels, and battles community in-fighting simultaneously. We shipped working builds daily so he could review between flights and court dates. Flexibility was non-negotiable.",
   },
   {
     phase: "Phase 4 — Launch",
-    title: "Going Live",
-    description: "Two revision rounds, performance optimization, and deployment. The site launched to an enthusiastic community response.",
+    title: "Live in 10 Days",
+    description:
+      "Two revision rounds, Lighthouse performance sweep, and deployment. The site launched to immediate community traction and Matt's trademark X announcement.",
   },
 ];
 
@@ -89,17 +101,18 @@ const UnapologeticallyJewish = () => (
             className="text-4xl md:text-6xl font-bold mb-6 leading-tight"
             style={{ fontFamily: '"Oswald", sans-serif', color: ACCENT_WHITE, textTransform: "uppercase" }}
           >
-            Unapologetically Jewish
+            Unapologetically Jewish: A Digital Weapon for a Fighter Who Demands Change
           </h1>
           <p className="text-lg md:text-xl text-white/70 max-w-2xl leading-relaxed font-body">
-            A bold, high-impact digital home for a vibrant community brand
-            — designed to be as unapologetic as the movement it represents.
+            Matt Taub doesn't ask for permission. When antisemitism surged across Toronto,
+            he built a movement on X, CPAC, and the streets. We gave that movement a digital
+            home as uncompromising as the man behind it.
           </p>
         </SectionReveal>
 
         {/* Tags */}
         <div className="flex flex-wrap gap-3 mt-8">
-          {["Community Platform", "Brutalist Design", "Event Integration", "Brand Identity"].map((tag) => (
+          {["Activist Platform", "Brutalist Design", "Rapid Deployment", "Action Toolkit"].map((tag) => (
             <span
               key={tag}
               className="text-xs font-mono px-3 py-1.5 rounded-full border"
@@ -161,47 +174,59 @@ const UnapologeticallyJewish = () => (
       </div>
     </section>
 
-    {/* Challenge & Solution */}
-    <section className="px-6 pb-20">
+    {/* Meet the Fighter */}
+    <ProseSection
+      label="Meet the Fighter"
+      heading="Matt Taub — The Man Behind the Movement"
+      paragraphs={[
+        "Matt Taub is not a committee. He's not a federation. He's a Toronto father and entrepreneur who decided that polite advocacy was a losing strategy. When antisemitic incidents exploded after October 7, Matt didn't wait for institutional permission — he grabbed a camera, opened X, and started fighting.",
+        "His targets are specific: police catch-and-release of hate-crime suspects, doxxing websites that publish Jewish home addresses, and community organizations too timid to name the problem. His tools are blunt — email blitzes to RCMP leadership and politicians, legal pushes to de-platform doxxing sites, viral video confrontations, and op-eds in the National Post.",
+        "He founded Known to the Police to track repeat antisemitic offenders that the justice system releases. He's appeared on CPAC, debated critics on live radio, and organized rallies that fill city squares. Unapologetically Jewish is the digital centre of gravity for all of it.",
+      ]}
+      labelColor={ACCENT_RED}
+      labelFont='"Oswald", sans-serif'
+      headingFont='"Oswald", sans-serif'
+    />
+
+    {/* Pull Quote */}
+    <section className="px-6 pb-12">
       <div className="max-w-5xl mx-auto">
-        <SectionReveal>
-          <div className="grid md:grid-cols-2 gap-12">
-            <div>
-              <h2
-                className="text-2xl font-bold mb-4 uppercase"
-                style={{ fontFamily: '"Oswald", sans-serif', color: ACCENT_WHITE }}
-              >
-                The Challenge
-              </h2>
-              <p className="text-white/60 leading-relaxed">
-                Unapologetically Jewish had built an incredible community through social media
-                and in-person events, but lacked a dedicated digital home. Their brand energy
-                — bold, proud, and unapologetically authentic — needed a website that matched
-                that intensity. They needed a platform that could serve as a central hub for
-                events, resources, and community connection, while making a strong visual
-                statement about who they are.
-              </p>
-            </div>
-            <div>
-              <h2
-                className="text-2xl font-bold mb-4 uppercase"
-                style={{ fontFamily: '"Oswald", sans-serif', color: ACCENT_WHITE }}
-              >
-                The Solution
-              </h2>
-              <p className="text-white/60 leading-relaxed">
-                We built a high-contrast, brutalist-inspired website that makes an immediate
-                impact. The design uses a stark red, black, and white palette with Oswald
-                typography for maximum visual punch. Every element is intentional — bold
-                headlines, clean layouts, and clear calls-to-action that move visitors from
-                awareness to engagement. The site serves as both a statement piece and a
-                functional community hub.
-              </p>
-            </div>
-          </div>
-        </SectionReveal>
+        <PullQuote
+          quote="I'm not waiting for permission. The Jewish community has been polite for too long."
+          attribution="Matt Taub, Founder"
+          borderColor={ACCENT_RED}
+          attributionColor={ACCENT_RED}
+        />
       </div>
     </section>
+
+    {/* The Challenge */}
+    <ProseSection
+      label="The Challenge"
+      heading="Post-October 7 Toronto: A City Failing Its Jews"
+      paragraphs={[
+        "After October 7, Toronto became ground zero for open antisemitism in Canada. Hate incidents surged. Protesters blockaded synagogues. Jewish businesses were vandalized. Doxxing sites published home addresses of community members. Police arrested suspects and released them within hours.",
+        "Existing community organizations issued carefully worded statements and formed committees. Matt Taub threw his phone against the wall and started recording. He needed a digital hub as bold as his X rants — a central platform that could aggregate his campaigns, drive real political pressure, and mobilize a community tired of being told to wait.",
+        "The challenge was clear: build something fast, build it loud, and build it to withstand the scrutiny that comes when you refuse to be polite.",
+      ]}
+      labelColor={ACCENT_RED}
+      labelFont='"Oswald", sans-serif'
+      headingFont='"Oswald", sans-serif'
+    />
+
+    {/* The Solution */}
+    <ProseSection
+      label="The Solution"
+      heading="The Brutalist Solution: A Site That Hits Like His Videos"
+      paragraphs={[
+        "We built a website that is a visual mirror of Matt Taub's personality. Stark red on black. Oswald uppercase headlines that feel like they're yelling at you — because they are. No corporate gloss, no stock photography, no committee-approved softness.",
+        "High-contrast CTAs drive real action: email your MP, donate to the legal fund, sign the petition, show up at the rally. Every page is built to convert passive scrollers into active participants. The Shopify merch store is one tap away. Donorbox and Tally forms are embedded inline. Eventbrite flows handle registration without leaving the site.",
+        "The result is a digital command centre for an activist who operates at the speed of outrage — and a design system bold enough to match.",
+      ]}
+      labelColor={ACCENT_RED}
+      labelFont='"Oswald", sans-serif'
+      headingFont='"Oswald", sans-serif'
+    />
 
     {/* Features */}
     <section className="px-6 pb-20">
@@ -221,8 +246,8 @@ const UnapologeticallyJewish = () => (
     {/* Testimonial */}
     <section className="mx-6 rounded-xl mb-20 overflow-hidden">
       <TestimonialBand
-        quote="Lumin8 understood exactly what we needed. The website they built has been a game-changer for our community engagement."
-        author="Matt"
+        quote="Lumin8 didn't flinch. They understood the assignment — build something that fights as hard as I do. This isn't a website. It's a weapon."
+        author="Matt Taub"
         role="Founder, Unapologetically Jewish"
         accentColor="#fff"
         background="#DC2626"
@@ -252,10 +277,10 @@ const UnapologeticallyJewish = () => (
             className="text-3xl md:text-4xl font-bold mb-4 uppercase"
             style={{ fontFamily: '"Oswald", sans-serif', color: ACCENT_WHITE }}
           >
-            Ready to make your mark?
+            Ready to Stand Unapologetically?
           </h2>
           <p className="text-white/60 mb-8 max-w-lg mx-auto">
-            Let's build something bold together. Starting at $750 CAD.
+            Matt Taub trusted us with his fight — who's next? Starting at $750 CAD.
           </p>
           <a
             href="/#pricing"
