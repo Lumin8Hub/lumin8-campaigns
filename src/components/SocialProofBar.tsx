@@ -138,7 +138,7 @@ const SocialProofBar = () => {
   return (
     <section
       ref={sectionRef}
-      className="fade-in-section bg-white border-t border-gray-200 py-12 md:py-16"
+      className="fade-in-section bg-white border-t border-gray-200 py-10 md:py-[3.2rem]"
     >
       <div className="max-w-6xl mx-auto px-4">
         <p className="font-serif italic text-lg md:text-2xl text-center text-[#ed4c96]">
@@ -146,7 +146,7 @@ const SocialProofBar = () => {
         </p>
 
         <div
-          className="mt-8 md:mt-10 overflow-hidden"
+          className="mt-6 md:mt-8 overflow-hidden"
           aria-label="Client logos"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
@@ -164,8 +164,8 @@ const SocialProofBar = () => {
                 <img
                   src={client.logoUrl}
                   alt={client.name}
-                  className="h-12 md:h-14 w-auto object-contain"
-                  style={{ minHeight: "48px" }}
+                  className="h-[72px] md:h-[84px] w-auto object-contain"
+                  style={{ minHeight: "72px" }}
                 />
               );
 
