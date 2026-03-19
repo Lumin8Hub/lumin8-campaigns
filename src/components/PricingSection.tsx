@@ -50,7 +50,7 @@ const PricingSection = () => {
                   </span>
                 )}
 
-                <h3 className="font-heading font-bold text-xl text-foreground mb-2 mt-4">{pkg.name}</h3>
+                <h3 className={`font-heading font-bold text-xl text-foreground mb-2 ${pkg.highlighted ? "mt-8" : "mt-4"}`}>{pkg.name}</h3>
                 <p className="text-lumin8-gray-400 text-sm mb-6">{pkg.tagline}</p>
 
                 <div className="mb-6">
