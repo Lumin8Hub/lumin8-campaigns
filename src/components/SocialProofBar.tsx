@@ -47,14 +47,14 @@ const clients = [
     logoUrl: "/logos/ScentIt.png",
   },
   {
-    name: "CCNY",
-    websiteUrl: "",
-    logoUrl: "/logos/ccny-logo.png",
+    name: "LightHouse1Eighty",
+    websiteUrl: "https://lighthouse1eighty.com/",
+    logoUrl: "/logos/Lighthouse.png",
   },
   {
-    name: "LightHouse1Eighty",
-    websiteUrl: "",
-    logoUrl: "/logos/lighthouse1eighty-logo.png",
+    name: "CCNY",
+    websiteUrl: "https://ccny.ca/",
+    logoUrl: "/logos/CCNY.png",
   },
 ];
 
