@@ -9,8 +9,8 @@ import ProseSection from "@/components/casestudy/ProseSection";
 import PullQuote from "@/components/casestudy/PullQuote";
 import SectionReveal from "@/components/animations/SectionReveal";
 
-const ACCENT_RED = "#CC0000";
-const ACCENT_WHITE = "#FFFFFF";
+const ACCENT = "#79CAC1";
+const ACCENT_DARK = "#0D0D0D";
 
 const stats = [
   { value: "10", label: "Days to launch" },
@@ -86,20 +86,19 @@ const timeline = [
 ];
 
 const UnapologeticallyJewish = () => (
-  <CaseStudyLayout accentColor={ACCENT_RED}>
+  <CaseStudyLayout accentColor={ACCENT}>
     {/* Hero */}
     <section className="px-6 pb-16">
       <div className="max-w-5xl mx-auto">
         <SectionReveal>
           <div
             className="text-xs font-mono uppercase tracking-wider mb-4"
-            style={{ color: ACCENT_RED }}
+            style={{ color: ACCENT }}
           >
             Case Study
           </div>
           <h1
-            className="text-4xl md:text-6xl font-bold mb-6 leading-tight"
-            style={{ fontFamily: '"Oswald", sans-serif', color: ACCENT_WHITE, textTransform: "uppercase" }}
+            className="text-4xl md:text-6xl font-heading font-extrabold mb-6 leading-tight tracking-tight text-white"
           >
             Unapologetically Jewish: A Digital Weapon for a Fighter Who Demands Change
           </h1>
@@ -116,7 +115,7 @@ const UnapologeticallyJewish = () => (
             <span
               key={tag}
               className="text-xs font-mono px-3 py-1.5 rounded-full border"
-              style={{ borderColor: `${ACCENT_RED}60`, color: ACCENT_RED }}
+              style={{ borderColor: `${ACCENT}40`, color: ACCENT }}
             >
               {tag}
             </span>
@@ -129,7 +128,7 @@ const UnapologeticallyJewish = () => (
     <section className="px-6 pb-20">
       <div className="max-w-5xl mx-auto">
         <SectionReveal delay={0.2}>
-          <BrowserMockup url="unapologeticallyjewish.com" accentColor={ACCENT_RED}>
+          <BrowserMockup url="unapologeticallyjewish.com" accentColor={ACCENT}>
             <video
               className="absolute inset-0 w-full h-full object-cover"
               autoPlay
@@ -152,8 +151,8 @@ const UnapologeticallyJewish = () => (
             >
               <div className="text-center px-8">
                 <div
-                  className="text-5xl md:text-7xl font-bold mb-4 opacity-30 uppercase"
-                  style={{ fontFamily: '"Oswald", sans-serif', color: ACCENT_RED }}
+                  className="text-5xl md:text-7xl font-heading font-bold mb-4 opacity-30"
+                  style={{ color: ACCENT }}
                 >
                   UJ
                 </div>
@@ -170,7 +169,7 @@ const UnapologeticallyJewish = () => (
     {/* Stats */}
     <section className="px-6 pb-20">
       <div className="max-w-5xl mx-auto">
-        <StatsBar stats={stats} accentColor={ACCENT_RED} />
+        <StatsBar stats={stats} accentColor={ACCENT} />
       </div>
     </section>
 
@@ -183,9 +182,7 @@ const UnapologeticallyJewish = () => (
         "His targets are specific: police catch-and-release of hate-crime suspects, doxxing websites that publish Jewish home addresses, and community organizations too timid to name the problem. His tools are blunt — email blitzes to RCMP leadership and politicians, legal pushes to de-platform doxxing sites, viral video confrontations, and op-eds in the National Post.",
         "He founded Known to the Police to track repeat antisemitic offenders that the justice system releases. He's appeared on CPAC, debated critics on live radio, and organized rallies that fill city squares. Unapologetically Jewish is the digital centre of gravity for all of it.",
       ]}
-      labelColor={ACCENT_RED}
-      labelFont='"Oswald", sans-serif'
-      headingFont='"Oswald", sans-serif'
+      labelColor={ACCENT}
     />
 
     {/* Pull Quote */}
@@ -194,8 +191,8 @@ const UnapologeticallyJewish = () => (
         <PullQuote
           quote="I'm not waiting for permission. The Jewish community has been polite for too long."
           attribution="Matt Taub, Founder"
-          borderColor={ACCENT_RED}
-          attributionColor={ACCENT_RED}
+          borderColor={ACCENT}
+          attributionColor={ACCENT}
         />
       </div>
     </section>
@@ -209,9 +206,7 @@ const UnapologeticallyJewish = () => (
         "Existing community organizations issued carefully worded statements and formed committees. Matt Taub threw his phone against the wall and started recording. He needed a digital hub as bold as his X rants — a central platform that could aggregate his campaigns, drive real political pressure, and mobilize a community tired of being told to wait.",
         "The challenge was clear: build something fast, build it loud, and build it to withstand the scrutiny that comes when you refuse to be polite.",
       ]}
-      labelColor={ACCENT_RED}
-      labelFont='"Oswald", sans-serif'
-      headingFont='"Oswald", sans-serif'
+      labelColor={ACCENT}
     />
 
     {/* The Solution */}
@@ -223,23 +218,18 @@ const UnapologeticallyJewish = () => (
         "High-contrast CTAs drive real action: email your MP, donate to the legal fund, sign the petition, show up at the rally. Every page is built to convert passive scrollers into active participants. The Shopify merch store is one tap away. Donorbox and Tally forms are embedded inline. Eventbrite flows handle registration without leaving the site.",
         "The result is a digital command centre for an activist who operates at the speed of outrage — and a design system bold enough to match.",
       ]}
-      labelColor={ACCENT_RED}
-      labelFont='"Oswald", sans-serif'
-      headingFont='"Oswald", sans-serif'
+      labelColor={ACCENT}
     />
 
     {/* Features */}
     <section className="px-6 pb-20">
       <div className="max-w-5xl mx-auto">
         <SectionReveal>
-          <h2
-            className="text-2xl font-bold mb-8 uppercase"
-            style={{ fontFamily: '"Oswald", sans-serif', color: ACCENT_WHITE }}
-          >
+          <h2 className="text-2xl font-heading font-bold mb-8 text-white">
             What We Delivered
           </h2>
         </SectionReveal>
-        <FeatureGrid features={features} accentColor={ACCENT_RED} />
+        <FeatureGrid features={features} accentColor={ACCENT} />
       </div>
     </section>
 
@@ -250,7 +240,7 @@ const UnapologeticallyJewish = () => (
         author="Matt Taub"
         role="Founder, Unapologetically Jewish"
         accentColor="#fff"
-        background="#DC2626"
+        background={`linear-gradient(135deg, ${ACCENT_DARK}, #1a3a36)`}
       />
     </section>
 
@@ -258,14 +248,11 @@ const UnapologeticallyJewish = () => (
     <section className="px-6 pb-20">
       <div className="max-w-5xl mx-auto">
         <SectionReveal>
-          <h2
-            className="text-2xl font-bold mb-10 uppercase"
-            style={{ fontFamily: '"Oswald", sans-serif', color: ACCENT_WHITE }}
-          >
+          <h2 className="text-2xl font-heading font-bold mb-10 text-white">
             Project Timeline
           </h2>
         </SectionReveal>
-        <Timeline steps={timeline} accentColor={ACCENT_RED} />
+        <Timeline steps={timeline} accentColor={ACCENT} />
       </div>
     </section>
 
@@ -273,10 +260,7 @@ const UnapologeticallyJewish = () => (
     <section className="px-6 pb-24">
       <div className="max-w-5xl mx-auto text-center">
         <SectionReveal>
-          <h2
-            className="text-3xl md:text-4xl font-bold mb-4 uppercase"
-            style={{ fontFamily: '"Oswald", sans-serif', color: ACCENT_WHITE }}
-          >
+          <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 text-white">
             Ready to Stand Unapologetically?
           </h2>
           <p className="text-white/60 mb-8 max-w-lg mx-auto">
@@ -285,7 +269,7 @@ const UnapologeticallyJewish = () => (
           <a
             href="/#pricing"
             className="inline-flex items-center gap-2 font-heading font-semibold text-sm px-8 py-3 rounded-full transition-transform hover:scale-[1.03]"
-            style={{ backgroundColor: ACCENT_RED, color: ACCENT_WHITE }}
+            style={{ backgroundColor: ACCENT, color: ACCENT_DARK }}
           >
             View Packages →
           </a>
