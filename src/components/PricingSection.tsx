@@ -40,17 +40,17 @@ const PricingSection = () => {
               <GlowCard
                 className={`rounded-3xl p-8 border transition-all duration-300 ${
                   pkg.highlighted
-                    ? "border-primary border-2 scale-[1.02] md:scale-105 relative"
+                    ? "border-primary border-2 scale-[1.02] md:scale-105 relative pt-12"
                     : "border-foreground/[0.08] bg-muted/30"
                 }`}
               >
                 {pkg.highlighted && pkg.badge && (
-                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground font-mono text-xs font-bold px-4 py-1 rounded-full animate-pulse-badge z-10">
+                  <span className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground font-mono text-xs font-bold px-4 py-1 rounded-full animate-pulse-badge z-10">
                     {pkg.badge}
                   </span>
                 )}
 
-                <h3 className={`font-heading font-bold text-xl text-foreground mb-2 ${pkg.highlighted ? "mt-8" : "mt-4"}`}>{pkg.name}</h3>
+                <h3 className="font-heading font-bold text-xl text-foreground mb-2">{pkg.name}</h3>
                 <p className="text-lumin8-gray-400 text-sm mb-6">{pkg.tagline}</p>
 
                 <div className="mb-6">
