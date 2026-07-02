@@ -13,24 +13,25 @@
     --popover: 0 0% 8%;
     --popover-foreground: 0 0% 100%;
 
-    --primary: 173 43% 63%;
+    /* Lumin8 for Candidates sub-brand: lead with lavender, teal supports */
+    --primary: 257 100% 81%;
     --primary-foreground: 0 0% 5%;
 
-    --secondary: 174 58% 55%;
+    --secondary: 173 43% 63%;
     --secondary-foreground: 0 0% 5%;
 
     --muted: 0 0% 15%;
     --muted-foreground: 220 9% 60%;
 
-    --accent: 336 100% 71%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 174 58% 55%;
+    --accent-foreground: 0 0% 5%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
     --border: 0 0% 100% / 0.08;
     --input: 0 0% 100% / 0.1;
-    --ring: 173 43% 63%;
+    --ring: 257 100% 81%;
 
     --radius: 1rem;
 
@@ -40,8 +41,10 @@
     --lumin8-off-white: 0 0% 96%;
     --lumin8-yellow: 173 43% 63%;
     --lumin8-green: 174 58% 55%;
-    --lumin8-pink: 336 100% 71%;
-    --lumin8-coral: 14 100% 64%;
+    /* muted for the candidates sub-brand: pink neutralized, coral reserved
+       for urgency accents (trust strip, final CTA band) */
+    --lumin8-pink: 220 9% 46%;
+    --lumin8-coral: 14 60% 55%;
     --lumin8-lavender: 257 100% 81%;
     --lumin8-gray-600: 220 9% 46%;
     --lumin8-gray-400: 218 11% 65%;
@@ -127,34 +130,4 @@
 .fade-in-section.is-visible {
   opacity: 1;
   transform: translateY(0);
-}
-
-/* HubSpot Form Overrides (inside contest modal) */
-.contest-form-modal .hs-form input,
-.contest-form-modal .hs-form textarea,
-.contest-form-modal .hs-form select {
-  background-color: #1A1A1A !important;
-  border: 1px solid #2A2A2A !important;
-  border-radius: 8px !important;
-  color: #fff !important;
-  padding: 0.625rem 0.75rem !important;
-}
-
-.contest-form-modal .hs-form label {
-  color: #E2E8F0 !important;
-  font-family: 'Plus Jakarta Sans', sans-serif !important;
-}
-
-.contest-form-modal .hs-form .hs-button {
-  background-color: #78C9C0 !important;
-  color: #0D0D0D !important;
-  border: none !important;
-  border-radius: 8px !important;
-  font-weight: 600 !important;
-  padding: 0.75rem 1.5rem !important;
-  cursor: pointer !important;
-}
-
-.contest-form-modal .hs-form .hs-button:hover {
-  background-color: #5FBAB0 !important;
 }

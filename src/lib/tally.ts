@@ -1,41 +1,26 @@
-// Form integration utilities for Lumin8 Starter
+// Form integration utilities for Lumin8 for Candidates
 
-// ─── Tally Form IDs (onboarding only) ──────────────────────
+// ─── Tally Form IDs ─────────────────────────────────────────
 export const TALLY_FORMS = {
-  CLIENT_ONBOARDING: "44jQjd",
+  // TODO: replace with the dedicated "Campaign Builder" Tally form ID
+  // (with Stripe payment block) once created. Currently points at the
+  // existing Lumin8 intake form so every CTA stays functional.
+  CANDIDATE_INTAKE: "44jQjd",
 } as const;
 
-// ─── HubSpot contest form ───────────────────────────────────
-// Opens via a custom DOM event; ContestFormModal listens for it.
-const HUBSPOT_FALLBACK_URL =
-  "https://5o9ln8.share-na3.hsforms.com/2WBLcaWnkRSOHASztAbIe4A";
-
-export function openContestForm(): void {
-  window.dispatchEvent(new CustomEvent("open-contest-form"));
-
-  // If the modal isn't mounted (shouldn't happen), fall back to opening the
-  // HubSpot share link in a new tab after a brief delay.
-  setTimeout(() => {
-    const modal = document.querySelector(".contest-form-modal");
-    if (!modal) {
-      window.open(HUBSPOT_FALLBACK_URL, "_blank");
-    }
-  }, 100);
-}
-
-// ─── Tally onboarding popup ─────────────────────────────────
-export function openOnboardingForm(): void {
+// ─── Tally Campaign Builder popup ───────────────────────────
+export function openCandidateForm(): void {
   if (window.Tally) {
-    window.Tally.openPopup(TALLY_FORMS.CLIENT_ONBOARDING, {
+    window.Tally.openPopup(TALLY_FORMS.CANDIDATE_INTAKE, {
       width: 700,
       layout: "default",
-      onOpen: () => console.log("[Lumin8] Onboarding form opened"),
+      onOpen: () => console.log("[Lumin8] Campaign Builder form opened"),
       onSubmit: (payload: unknown) =>
-        console.log("[Lumin8] Onboarding form submitted", payload),
+        console.log("[Lumin8] Campaign Builder form submitted", payload),
     });
   } else {
     window.open(
-      `https://tally.so/r/${TALLY_FORMS.CLIENT_ONBOARDING}`,
+      `https://tally.so/r/${TALLY_FORMS.CANDIDATE_INTAKE}`,
       "_blank",
     );
   }

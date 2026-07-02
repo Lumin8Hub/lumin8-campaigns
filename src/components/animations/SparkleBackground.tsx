@@ -5,7 +5,7 @@ const SparkleBackground = () => {
   const shouldReduceMotion = useReducedMotion();
 
   const sparkles = useMemo(() => {
-    return Array.from({ length: 35 }, (_, i) => ({
+    return Array.from({ length: 20 }, (_, i) => ({
       id: i,
       top: `${Math.random() * 100}%`,
       left: `${Math.random() * 100}%`,
