@@ -5,14 +5,6 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
-import WorkIndex from "./pages/work/WorkIndex.tsx";
-import EarthSong from "./pages/work/EarthSong.tsx";
-import UnapologeticallyJewish from "./pages/work/UnapologeticallyJewish.tsx";
-import Sportball from "./pages/work/Sportball.tsx";
-import JillianRodak from "./pages/work/JillianRodak.tsx";
-import OnboardingPage from "./pages/OnboardingPage.tsx";
-import ContestRules from "./pages/ContestRules.tsx";
-import ContestFormModal from "./components/ContestFormModal.tsx";
 
 const queryClient = new QueryClient();
 
@@ -24,16 +16,8 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter basename={baseUrl}>
-        <ContestFormModal />
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/work" element={<WorkIndex />} />
-          <Route path="/work/earth-song" element={<EarthSong />} />
-          <Route path="/work/unapologetically-jewish" element={<UnapologeticallyJewish />} />
-          <Route path="/work/sportball" element={<Sportball />} />
-          <Route path="/work/jillian-rodak" element={<JillianRodak />} />
-          <Route path="/onboarding" element={<OnboardingPage />} />
-          <Route path="/contest-rules" element={<ContestRules />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

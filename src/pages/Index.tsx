@@ -1,21 +1,17 @@
 import { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import SocialProofBar from "@/components/SocialProofBar";
-import ProblemSection from "@/components/ProblemSection";
-import SolutionSection from "@/components/SolutionSection";
-import PricingSection from "@/components/PricingSection";
-import AddOnsSection from "@/components/AddOnsSection";
-import ProcessSection from "@/components/ProcessSection";
-import ContestSection from "@/components/ContestSection";
-import FAQSection from "@/components/FAQSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
-import AboutSection from "@/components/AboutSection";
-import CaseStudiesSection from "@/components/CaseStudiesSection";
-import CTASection from "@/components/CTASection";
-import Footer from "@/components/Footer";
+import CandidatesNavbar from "@/components/CandidatesNavbar";
+import CandidatesHero from "@/components/CandidatesHero";
+import SearchProblemSection from "@/components/SearchProblemSection";
+import ProofSection from "@/components/ProofSection";
+import HowItWorksSection from "@/components/HowItWorksSection";
+import PackageSection from "@/components/PackageSection";
+import CampaignAddOnsSection from "@/components/CampaignAddOnsSection";
+import ComplianceSection from "@/components/ComplianceSection";
+import CandidatesFAQ from "@/components/CandidatesFAQ";
+import FinalCTABand from "@/components/FinalCTABand";
+import CandidatesFooter from "@/components/CandidatesFooter";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -29,21 +25,17 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
-      <Navbar />
-      <Hero />
-      <SocialProofBar />
-      <ProblemSection />
-      <AboutSection />
-      <CaseStudiesSection />
-      <PricingSection />
-      <ProcessSection />
-      <ContestSection />
-      <AddOnsSection />
-      <SolutionSection />
-      <TestimonialsSection />
-      <CTASection />
-      <FAQSection />
-      <Footer />
+      <CandidatesNavbar />
+      <CandidatesHero />
+      <SearchProblemSection />
+      <ProofSection />
+      <HowItWorksSection />
+      <PackageSection />
+      <CampaignAddOnsSection />
+      <ComplianceSection />
+      <CandidatesFAQ />
+      <FinalCTABand />
+      <CandidatesFooter />
     </div>
   );
 };
