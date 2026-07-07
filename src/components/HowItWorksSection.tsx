@@ -9,15 +9,15 @@ import { openCandidateForm } from "@/lib/tally";
 const stepImages = [
   {
     src: "candidates/process-intake.webp",
-    alt: "Hands using a laptop with an abstract campaign website intake form",
+    alt: "A person filling out a short five-field form on their phone",
   },
   {
     src: "candidates/process-build.webp",
-    alt: "A bright workspace showing an abstract campaign website build",
+    alt: "A designer building an abstract campaign website from wireframes on a laptop",
   },
   {
     src: "candidates/process-launch.webp",
-    alt: "Desktop and mobile devices showing an abstract launched campaign website",
+    alt: "A finished campaign website shown live on a laptop, tablet, and phone alongside a one-page launch guide",
   },
 ];
 
