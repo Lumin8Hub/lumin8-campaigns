@@ -15,7 +15,7 @@ const CampaignAddOnsSection = () => {
         <SectionReveal>
           <span className="section-label">Add-Ons</span>
           <h2 className="section-headline text-foreground">
-            Everything else your campaign needs, from the same team.
+            Campaign extras, ready when you need them.
           </h2>
           <p className="section-subheadline mb-12">
             Layer on exactly what you need. All add-ons are one-time costs unless noted.
@@ -32,11 +32,11 @@ const CampaignAddOnsSection = () => {
             >
               <GlowCard
                 glowColor="rgba(121, 202, 193, 0.12)"
-                className="h-full rounded-lg border border-foreground/10 bg-lumin8-off-white p-6"
+                className="h-full rounded-lg border border-primary/20 bg-secondary/35 p-6"
               >
                 <div className="mb-3 flex items-start justify-between">
                   <h3 className="font-heading text-xl font-bold text-foreground">{a.service}</h3>
-                  <span className="ml-4 shrink-0 font-mono text-sm font-bold text-primary">
+                  <span className="ml-4 shrink-0 rounded-full bg-background px-3 py-1 text-sm font-bold text-primary">
                     {a.price}
                   </span>
                 </div>

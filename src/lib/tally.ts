@@ -1,4 +1,4 @@
-// Form integration utilities for Lumin8 for Candidates
+// Candidate intake form integration utilities
 
 // ─── Tally Form IDs ─────────────────────────────────────────
 export const TALLY_FORMS = {

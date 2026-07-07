@@ -13,6 +13,6 @@ export const candidatePackage = {
     "Live within 3 business days of your completed form",
   ],
   microcopy:
-    "Start with five fields. We will follow up with next steps, timeline, and payment details.",
-  cta: "Start with five fields",
+    "The first form takes about five minutes. We will follow up with next steps, timeline, and payment details.",
+  cta: "Get Started",
 };

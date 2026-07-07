@@ -71,7 +71,7 @@
 
 @layer components {
   .section-label {
-    @apply mb-4 block font-mono text-sm uppercase tracking-[0.1em] text-muted-foreground;
+    @apply mb-4 block font-body text-sm font-bold uppercase tracking-[0.12em] text-primary;
   }
 
   .section-headline {

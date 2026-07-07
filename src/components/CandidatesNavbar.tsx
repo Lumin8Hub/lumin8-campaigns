@@ -34,7 +34,7 @@ const CandidatesNavbar = () => {
         onClick={openCandidateForm}
         className="rounded-full bg-primary px-5 py-2 font-heading text-sm font-semibold text-primary-foreground transition-transform duration-300 hover:scale-[1.03]"
       >
-        Start with five fields
+        Get Started
       </button>
     </nav>
   );

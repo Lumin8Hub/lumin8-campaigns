@@ -30,7 +30,7 @@ const PackageSection = () => {
                 <span className="font-heading text-5xl font-extrabold text-foreground">
                   {candidatePackage.price.toLocaleString()}
                 </span>
-                <span className="ml-2 font-mono text-xs text-muted-foreground">CAD</span>
+                <span className="ml-2 text-xs font-bold text-muted-foreground">CAD</span>
               </div>
             </div>
 
@@ -50,7 +50,7 @@ const PackageSection = () => {
               {candidatePackage.cta}
             </button>
 
-            <p className="mt-4 font-mono text-xs leading-relaxed text-muted-foreground">
+            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
               {candidatePackage.microcopy}
             </p>
           </GlowCard>

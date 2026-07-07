@@ -24,7 +24,7 @@ const FinalCTABand = () => {
             onClick={openCandidateForm}
             className="inline-block rounded-full bg-primary px-10 py-4 text-center font-heading text-lg font-bold text-primary-foreground"
           >
-            Start with five fields
+            Get Started
           </MagneticButton>
           {/* TODO: swap mailto for the Calendly link once available */}
           <a

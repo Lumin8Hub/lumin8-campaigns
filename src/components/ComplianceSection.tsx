@@ -6,6 +6,8 @@ const ComplianceSection = () => {
     <section id="compliance" className="bg-lumin8-off-white px-6 py-24">
       <div className="mx-auto max-w-3xl">
         <SectionReveal>
+          <span className="section-label">Election Rules</span>
+
           <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/15">
             <ShieldCheck className="h-6 w-6 text-primary" />
           </div>
@@ -22,7 +24,7 @@ const ComplianceSection = () => {
             financial filing.
           </p>
 
-          <p className="border-t border-foreground/10 pt-6 font-mono text-xs leading-relaxed text-muted-foreground">
+          <p className="border-t border-foreground/10 pt-6 text-sm leading-relaxed text-muted-foreground">
             Lumin8 is not a law firm and does not provide legal advice.
             Compliance with election legislation in your province and
             municipality remains the candidate's responsibility — we make it

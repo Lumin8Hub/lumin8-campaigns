@@ -16,7 +16,7 @@ const CandidatesFooter = () => {
 
         {/* Contact */}
         <div>
-          <h4 className="mb-4 font-mono text-xs uppercase tracking-[0.1em] text-muted-foreground">
+          <h4 className="mb-4 text-xs font-bold uppercase tracking-[0.1em] text-primary">
             Contact
           </h4>
           <a
@@ -37,7 +37,7 @@ const CandidatesFooter = () => {
 
         {/* Offer */}
         <div>
-          <h4 className="mb-4 font-mono text-xs uppercase tracking-[0.1em] text-muted-foreground">
+          <h4 className="mb-4 text-xs font-bold uppercase tracking-[0.1em] text-primary">
             For Candidates
           </h4>
           <p className="max-w-xs text-sm leading-relaxed text-foreground/70">
@@ -56,10 +56,10 @@ const CandidatesFooter = () => {
 
       {/* Bottom bar */}
       <div className="mx-auto mt-12 flex max-w-6xl flex-col items-center justify-between gap-4 border-t border-foreground/10 pt-6 md:flex-row">
-        <p className="font-mono text-xs text-muted-foreground">
+        <p className="text-xs font-semibold text-muted-foreground">
           ©2026 LUMIN8. ALL RIGHTS RESERVED.
         </p>
-        <p className="font-mono text-xs text-muted-foreground">
+        <p className="text-xs font-semibold text-muted-foreground">
           LUMIN8 FOR CANDIDATES · CAMPAIGNS.LUMIN8.AGENCY
         </p>
       </div>
