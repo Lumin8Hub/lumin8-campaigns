@@ -3,18 +3,18 @@ import SectionReveal from "./animations/SectionReveal";
 
 const ComplianceSection = () => {
   return (
-    <section id="compliance" className="bg-lumin8-off-white py-24 px-6">
-      <div className="max-w-3xl mx-auto">
+    <section id="compliance" className="bg-lumin8-off-white px-6 py-24">
+      <div className="mx-auto max-w-3xl">
         <SectionReveal>
-          <div className="w-12 h-12 rounded-xl bg-primary/15 flex items-center justify-center mb-6">
-            <ShieldCheck className="w-6 h-6 text-lumin8-black" />
+          <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/15">
+            <ShieldCheck className="h-6 w-6 text-primary" />
           </div>
 
-          <h2 className="section-headline text-lumin8-black mb-6">
+          <h2 className="section-headline mb-6 text-foreground">
             Built with election rules in mind.
           </h2>
 
-          <p className="text-lumin8-gray-600 text-lg leading-relaxed mb-10">
+          <p className="mb-10 text-xl leading-relaxed text-muted-foreground">
             Municipal campaigns are regulated — contribution limits, donor
             records, attribution statements, spending reporting. We build your
             site to <em>support</em> those obligations by default: proper
@@ -22,7 +22,7 @@ const ComplianceSection = () => {
             financial filing.
           </p>
 
-          <p className="font-mono text-xs text-lumin8-gray-600 leading-relaxed border-t border-lumin8-black/10 pt-6">
+          <p className="border-t border-foreground/10 pt-6 font-mono text-xs leading-relaxed text-muted-foreground">
             Lumin8 is not a law firm and does not provide legal advice.
             Compliance with election legislation in your province and
             municipality remains the candidate's responsibility — we make it

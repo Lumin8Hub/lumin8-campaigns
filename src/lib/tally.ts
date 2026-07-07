@@ -2,21 +2,21 @@
 
 // ─── Tally Form IDs ─────────────────────────────────────────
 export const TALLY_FORMS = {
-  // TODO: replace with the dedicated "Campaign Builder" Tally form ID
-  // (with Stripe payment block) once created. Currently points at the
-  // existing Lumin8 intake form so every CTA stays functional.
+  // TODO: replace with the new five-field candidate intake form ID once it is
+  // created in Tally. It should collect only election type, ward/riding, name,
+  // phone number, and email. This temporary ID keeps every CTA functional.
   CANDIDATE_INTAKE: "44jQjd",
 } as const;
 
-// ─── Tally Campaign Builder popup ───────────────────────────
+// ─── Tally candidate intake popup ───────────────────────────
 export function openCandidateForm(): void {
   if (window.Tally) {
     window.Tally.openPopup(TALLY_FORMS.CANDIDATE_INTAKE, {
       width: 700,
       layout: "default",
-      onOpen: () => console.log("[Lumin8] Campaign Builder form opened"),
+      onOpen: () => console.log("[Lumin8] Candidate intake form opened"),
       onSubmit: (payload: unknown) =>
-        console.log("[Lumin8] Campaign Builder form submitted", payload),
+        console.log("[Lumin8] Candidate intake form submitted", payload),
     });
   } else {
     window.open(

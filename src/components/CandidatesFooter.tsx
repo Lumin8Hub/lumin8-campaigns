@@ -2,26 +2,26 @@ import lumin8Logo from "@/assets/lumin8-logo.png";
 
 const CandidatesFooter = () => {
   return (
-    <footer className="bg-background border-t border-foreground/[0.06] py-16 px-6">
-      <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-10">
+    <footer className="border-t border-foreground/10 bg-background px-6 py-16">
+      <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-3">
         {/* Brand */}
         <div>
           <a href="https://lumin8.agency" target="_blank" rel="noopener noreferrer">
             <img src={lumin8Logo} alt="LUMIN8" className="h-10 w-auto" />
           </a>
-          <p className="text-lumin8-gray-400 text-sm mt-3 font-serif italic">
+          <p className="mt-3 text-sm font-medium text-muted-foreground">
             There's light at the end of the funnel.
           </p>
         </div>
 
         {/* Contact */}
         <div>
-          <h4 className="font-mono text-xs uppercase tracking-[0.1em] text-lumin8-gray-400 mb-4">
+          <h4 className="mb-4 font-mono text-xs uppercase tracking-[0.1em] text-muted-foreground">
             Contact
           </h4>
           <a
             href="mailto:hello@lumin8.agency"
-            className="text-foreground/70 text-sm block mb-2 hover:-translate-y-px transition-transform duration-200"
+            className="mb-2 block text-sm text-foreground/70 transition-transform duration-200 hover:-translate-y-px"
           >
             hello@lumin8.agency
           </a>
@@ -29,25 +29,22 @@ const CandidatesFooter = () => {
             href="https://lumin8.agency"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-foreground/70 text-sm hover:-translate-y-px transition-transform duration-200"
+            className="text-sm text-foreground/70 transition-transform duration-200 hover:-translate-y-px"
           >
             lumin8.agency
           </a>
         </div>
 
-        {/* Proof */}
+        {/* Offer */}
         <div>
-          <h4 className="font-mono text-xs uppercase tracking-[0.1em] text-lumin8-gray-400 mb-4">
-            Live campaign work
+          <h4 className="mb-4 font-mono text-xs uppercase tracking-[0.1em] text-muted-foreground">
+            For Candidates
           </h4>
-          <a
-            href="https://dorit4trustee.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-foreground/70 text-sm hover:-translate-y-px transition-transform duration-200"
-          >
-            dorit4trustee.com
-          </a>
+          <p className="max-w-xs text-sm leading-relaxed text-foreground/70">
+            Quick Launch campaign websites start at $1,000 CAD, with optional
+            add-ons for donations, print, care, rush delivery, and post-election
+            conversion.
+          </p>
         </div>
       </div>
 
@@ -58,11 +55,11 @@ const CandidatesFooter = () => {
       */}
 
       {/* Bottom bar */}
-      <div className="max-w-6xl mx-auto mt-12 pt-6 border-t border-foreground/[0.06] flex flex-col md:flex-row items-center justify-between gap-4">
-        <p className="font-mono text-xs text-lumin8-gray-400">
+      <div className="mx-auto mt-12 flex max-w-6xl flex-col items-center justify-between gap-4 border-t border-foreground/10 pt-6 md:flex-row">
+        <p className="font-mono text-xs text-muted-foreground">
           ©2026 LUMIN8. ALL RIGHTS RESERVED.
         </p>
-        <p className="font-mono text-xs text-lumin8-gray-400">
+        <p className="font-mono text-xs text-muted-foreground">
           LUMIN8 FOR CANDIDATES · CAMPAIGNS.LUMIN8.AGENCY
         </p>
       </div>

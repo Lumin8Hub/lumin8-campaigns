@@ -2,12 +2,12 @@ export const candidateFaq = [
   {
     question: "Why so fast and affordable?",
     answer:
-      "Because we've productized it. One proven campaign framework, refined on a live 2026 race, plus modern build tooling. You get agency quality without agency overhead — the trade is that you provide your content through our structured form.",
+      "Because we've productized it. One proven campaign framework, reusable build patterns, and a focused intake keep the work efficient. You get agency quality without open-ended agency overhead.",
   },
   {
     question: "What do I need to have ready?",
     answer:
-      "Your bio, your top 3–5 priorities, a good photo, and your domain preference. Our form walks you through everything else — most candidates finish it in under 30 minutes.",
+      "The first step only asks for election type, ward or riding, name, phone number, and email. After that, we will guide you through the content we need: bio, priorities, photos, domain preference, and any add-ons.",
   },
   {
     question: "Can you write my content?",
@@ -22,11 +22,11 @@ export const candidateFaq = [
   {
     question: "What happens after the election?",
     answer:
-      "Your site and domain are yours. Winners often convert theirs into an in-office site — we can help with that too.",
+      "Your site and domain are yours. Winners can convert the campaign site into an in-office site for $500, with room for representation details, results, priorities, and endorsements.",
   },
   {
     question: "Do you work with candidates anywhere in Canada?",
     answer:
-      "Yes — with one exception. Because our founder manages a school board trustee campaign in York Region, we do not provide services to school board trustee candidates in York Region races. It's an integrity line we won't cross, for your protection and ours.",
+      "Yes. We work with municipal candidates across Canada and will flag any race-specific fit or compliance questions before taking on the project.",
   },
 ];

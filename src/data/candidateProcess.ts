@@ -1,10 +1,10 @@
 export const candidateProcessSteps = [
   {
     step: "01",
-    title: "Fill out the Campaign Builder form",
-    timeline: "20–30 min",
+    title: "Send the five-field intake",
+    timeline: "5 min",
     description:
-      "One structured form collects everything: your bio, platform, photos, colours, domain, and feature choices. No email ping-pong, no discovery calls unless you want one.",
+      "Tell us your election type, ward or riding, name, phone number, and email. We will reply with the next steps for your build.",
     color: "lumin8-lavender",
   },
   {
@@ -20,7 +20,7 @@ export const candidateProcessSteps = [
     title: "Review, revise, launch",
     timeline: "Launch",
     description:
-      "One structured revision round, then we go live on your domain and hand you the keys — plus a one-page cheat sheet for updating content yourself.",
+      "One structured revision round, then we go live on your domain and hand you the keys, plus a one-page cheat sheet for updating content yourself.",
     color: "lumin8-yellow",
   },
 ];

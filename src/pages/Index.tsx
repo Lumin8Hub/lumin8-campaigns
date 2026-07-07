@@ -3,8 +3,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import CandidatesNavbar from "@/components/CandidatesNavbar";
 import CandidatesHero from "@/components/CandidatesHero";
-import SearchProblemSection from "@/components/SearchProblemSection";
-import ProofSection from "@/components/ProofSection";
+import CampaignBenefitsSection from "@/components/CampaignBenefitsSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import PackageSection from "@/components/PackageSection";
 import CampaignAddOnsSection from "@/components/CampaignAddOnsSection";
@@ -24,13 +23,12 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen">
-      <CandidatesNavbar />
-      <CandidatesHero />
-      <SearchProblemSection />
-      <ProofSection />
-      <HowItWorksSection />
-      <PackageSection />
+      <div className="min-h-screen">
+        <CandidatesNavbar />
+        <CandidatesHero />
+        <CampaignBenefitsSection />
+        <HowItWorksSection />
+        <PackageSection />
       <CampaignAddOnsSection />
       <ComplianceSection />
       <CandidatesFAQ />

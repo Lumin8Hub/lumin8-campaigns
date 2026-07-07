@@ -13,12 +13,12 @@ const CandidatesNavbar = () => {
 
   return (
     <nav
-      className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-5xl rounded-full px-6 py-3 flex items-center justify-between transition-all duration-300 ${
-        scrolled ? "border border-foreground/[0.06]" : "bg-transparent"
+      className={`fixed left-1/2 top-4 z-50 flex w-[92%] max-w-5xl -translate-x-1/2 items-center justify-between rounded-full px-6 py-3 transition-all duration-300 ${
+        scrolled ? "border border-foreground/10 shadow-sm" : "border border-transparent"
       }`}
       style={{
         backdropFilter: scrolled ? "blur(12px)" : "none",
-        background: scrolled ? "rgba(13, 17, 23, 0.8)" : "transparent",
+        background: scrolled ? "rgba(255, 255, 255, 0.88)" : "transparent",
       }}
     >
       <a
@@ -32,9 +32,9 @@ const CandidatesNavbar = () => {
 
       <button
         onClick={openCandidateForm}
-        className="bg-primary text-primary-foreground font-heading font-semibold text-sm px-5 py-2 rounded-full hover:scale-[1.03] transition-transform duration-300"
+        className="rounded-full bg-primary px-5 py-2 font-heading text-sm font-semibold text-primary-foreground transition-transform duration-300 hover:scale-[1.03]"
       >
-        Start Your Website →
+        Start with five fields
       </button>
     </nav>
   );

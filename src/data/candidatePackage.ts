@@ -13,6 +13,6 @@ export const candidatePackage = {
     "Live within 3 business days of your completed form",
   ],
   microcopy:
-    "Payment is taken when you submit the intake form. Build starts same or next business day.",
-  cta: "Start Your Website →",
+    "Start with five fields. We will follow up with next steps, timeline, and payment details.",
+  cta: "Start with five fields",
 };

@@ -10,11 +10,10 @@ const CampaignAddOnsSection = () => {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section id="addons" className="bg-background py-24 px-6 relative overflow-hidden">
-      <div className="blob blob-lavender w-28 h-28 top-10 -left-10 opacity-20 blur-[60px]" />
-
-      <div className="max-w-6xl mx-auto">
+    <section id="addons" className="bg-background px-6 py-24">
+      <div className="mx-auto max-w-6xl">
         <SectionReveal>
+          <span className="section-label">Add-Ons</span>
           <h2 className="section-headline text-foreground">
             Everything else your campaign needs, from the same team.
           </h2>
@@ -23,7 +22,7 @@ const CampaignAddOnsSection = () => {
           </p>
         </SectionReveal>
 
-        <div ref={cardsRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div ref={cardsRef} className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {candidateAddons.map((a, i) => (
             <motion.div
               key={a.service}
@@ -32,16 +31,16 @@ const CampaignAddOnsSection = () => {
               transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: i * 0.08 }}
             >
               <GlowCard
-                glowColor="rgba(179, 157, 255, 0.08)"
-                className="bg-muted rounded-2xl p-6 border border-foreground/[0.06] h-full"
+                glowColor="rgba(121, 202, 193, 0.12)"
+                className="h-full rounded-lg border border-foreground/10 bg-lumin8-off-white p-6"
               >
-                <div className="flex justify-between items-start mb-2">
-                  <h3 className="font-heading font-bold text-foreground">{a.service}</h3>
-                  <span className="font-mono text-sm font-bold text-primary shrink-0 ml-4">
+                <div className="mb-3 flex items-start justify-between">
+                  <h3 className="font-heading text-xl font-bold text-foreground">{a.service}</h3>
+                  <span className="ml-4 shrink-0 font-mono text-sm font-bold text-primary">
                     {a.price}
                   </span>
                 </div>
-                <p className="text-lumin8-gray-400 text-sm">{a.description}</p>
+                <p className="text-base leading-relaxed text-muted-foreground">{a.description}</p>
               </GlowCard>
             </motion.div>
           ))}
