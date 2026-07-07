@@ -13,30 +13,31 @@ const CandidatesFAQ = () => {
   };
 
   return (
-    <section id="faq" className="bg-lumin8-off-white py-24 px-6">
-      <div className="max-w-3xl mx-auto">
+    <section id="faq" className="bg-background px-6 py-24">
+      <div className="mx-auto max-w-3xl">
         <SectionReveal>
-          <h2 className="section-headline text-lumin8-black mb-12">
+          <span className="section-label">FAQ</span>
+          <h2 className="section-headline mb-12 text-foreground">
             Questions? We've got answers.
           </h2>
         </SectionReveal>
 
         <div className="space-y-0">
           {candidateFaq.map((item, i) => (
-            <div key={i} className="border-b border-lumin8-black/10">
+            <div key={i} className="border-b border-foreground/10">
               <button
                 onClick={() => toggle(i)}
-                className="w-full flex items-center justify-between py-6 text-left"
+                className="flex w-full items-center justify-between py-6 text-left"
                 aria-expanded={openIndex === i}
               >
-                <span className="font-heading font-semibold text-lumin8-black pr-4">
+                <span className="pr-4 font-heading text-xl font-semibold text-foreground">
                   {item.question}
                 </span>
                 <motion.div
                   animate={{ rotate: openIndex === i ? 180 : 0 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <ChevronDown className="w-5 h-5 text-lumin8-gray-600 shrink-0" />
+                  <ChevronDown className="h-5 w-5 shrink-0 text-muted-foreground" />
                 </motion.div>
               </button>
               <AnimatePresence>
@@ -48,7 +49,9 @@ const CandidatesFAQ = () => {
                     transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
                     className="overflow-hidden"
                   >
-                    <p className="pb-6 text-lumin8-gray-600 leading-relaxed">{item.answer}</p>
+                    <p className="pb-6 text-lg leading-relaxed text-muted-foreground">
+                      {item.answer}
+                    </p>
                   </motion.div>
                 )}
               </AnimatePresence>

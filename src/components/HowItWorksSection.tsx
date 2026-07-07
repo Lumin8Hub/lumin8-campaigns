@@ -34,14 +34,13 @@ const HowItWorksSection = () => {
   }, [isInView, shouldReduceMotion]);
 
   return (
-    <section id="process" className="bg-background py-24 px-6 relative overflow-hidden">
-      <div className="blob blob-green w-36 h-36 top-20 -right-10 opacity-30 blur-[60px]" />
-
-      <div className="max-w-3xl mx-auto">
+    <section id="process" className="bg-background px-6 py-24">
+      <div className="mx-auto max-w-3xl">
         <SectionReveal>
-          <h2 className="section-headline text-foreground mb-2">Live in three steps.</h2>
+          <span className="section-label">How It Works</span>
+          <h2 className="section-headline mb-2 text-foreground">Live in three steps.</h2>
           <p className="section-subheadline mb-16">
-            No email ping-pong. No discovery calls unless you want one.
+            A short start, a focused build, and a clean launch on your domain.
           </p>
         </SectionReveal>
 
@@ -100,11 +99,15 @@ const HowItWorksSection = () => {
                   {step.step}
                 </motion.div>
                 <div>
-                  <span className="text-lumin8-gray-400 font-mono text-xs uppercase tracking-wider">
+                  <span className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
                     {step.timeline}
                   </span>
-                  <h3 className="text-xl font-heading font-bold text-foreground mt-1 mb-2">{step.title}</h3>
-                  <p className="text-lumin8-gray-400 leading-relaxed">{step.description}</p>
+                  <h3 className="mb-2 mt-1 font-heading text-2xl font-bold text-foreground">
+                    {step.title}
+                  </h3>
+                  <p className="text-lg leading-relaxed text-muted-foreground">
+                    {step.description}
+                  </p>
                 </div>
               </motion.div>
             );
@@ -114,9 +117,9 @@ const HowItWorksSection = () => {
         <div className="flex justify-start mt-4">
           <button
             onClick={openCandidateForm}
-            className="bg-primary text-primary-foreground font-heading font-semibold px-8 py-3 rounded-full hover:scale-[1.03] transition-transform duration-300"
+            className="rounded-full bg-primary px-8 py-3 font-heading font-semibold text-primary-foreground transition-transform duration-300 hover:scale-[1.03]"
           >
-            Start the form →
+            Start with five fields
           </button>
         </div>
       </div>

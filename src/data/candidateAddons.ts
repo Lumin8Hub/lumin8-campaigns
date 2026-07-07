@@ -12,7 +12,7 @@ export const candidateAddons = [
   },
   {
     service: "Print pack",
-    price: "$500",
+    price: "$750",
     description:
       "Lawn sign concept + brochure, print-ready, matched to your site.",
   },
@@ -26,5 +26,11 @@ export const candidateAddons = [
     service: "48-hour rush",
     price: "$300",
     description: "Jump the queue.",
+  },
+  {
+    service: "Winner site conversion",
+    price: "$500",
+    description:
+      "After election day, convert your campaign site into a councillor, trustee, mayor, or representative site.",
   },
 ];
