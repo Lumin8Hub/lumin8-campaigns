@@ -21,7 +21,7 @@ const CandidatesFooter = () => {
           </h4>
           <a
             href="mailto:hello@lumin8.agency"
-            className="mb-2 block text-sm text-foreground/70 transition-transform duration-200 hover:-translate-y-px"
+            className="flex min-h-[44px] items-center text-sm text-foreground/70 transition-transform duration-200 hover:-translate-y-px"
           >
             hello@lumin8.agency
           </a>
@@ -29,7 +29,7 @@ const CandidatesFooter = () => {
             href="https://lumin8.agency"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm text-foreground/70 transition-transform duration-200 hover:-translate-y-px"
+            className="inline-flex min-h-[44px] items-center text-sm text-foreground/70 transition-transform duration-200 hover:-translate-y-px"
           >
             lumin8.agency
           </a>
@@ -41,8 +41,8 @@ const CandidatesFooter = () => {
             For Candidates
           </h4>
           <p className="max-w-xs text-sm leading-relaxed text-foreground/70">
-            Professional campaign websites with optional add-ons for donations,
-            print, care, rush delivery, and post-election conversion.
+            Professional campaign websites, with add-ons for email, donations,
+            print, rush delivery, and life after election day.
           </p>
         </div>
       </div>

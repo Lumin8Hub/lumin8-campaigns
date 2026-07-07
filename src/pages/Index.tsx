@@ -16,10 +16,15 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Index = () => {
   useEffect(() => {
-    const timer = setTimeout(() => {
-      ScrollTrigger.refresh();
-    }, 100);
-    return () => clearTimeout(timer);
+    // Recalculate trigger positions once fonts and images have settled
+    const refresh = () => ScrollTrigger.refresh();
+    const timer = setTimeout(refresh, 100);
+    window.addEventListener("load", refresh);
+    document.fonts?.ready.then(refresh).catch(() => {});
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener("load", refresh);
+    };
   }, []);
 
   return (

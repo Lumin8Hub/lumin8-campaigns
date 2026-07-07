@@ -2,25 +2,22 @@ export const candidateProcessSteps = [
   {
     step: "01",
     title: "Send the five-field intake",
-    timeline: "5 min",
+    timeline: "3 min",
     description:
-      "Tell us your election type, ward or riding, name, phone number, and email. We will reply with the next steps for your build.",
-    color: "lumin8-lavender",
+      "Election type, ward or riding, name, phone, email. That's it to start.",
   },
   {
     step: "02",
     title: "We build",
     timeline: "3 business days",
     description:
-      "Your site is assembled on a proven campaign framework, tailored to your brand and race, tested on mobile, and staged for your review.",
-    color: "lumin8-green",
+      "We build your site, test it on mobile, and stage it for review.",
   },
   {
     step: "03",
     title: "Review, revise, launch",
     timeline: "Launch",
     description:
-      "One structured revision round, then we go live on your domain and hand you the keys, plus a one-page cheat sheet for updating content yourself.",
-    color: "lumin8-yellow",
+      "One revision round, then we go live on your domain — with a one-page guide for updating it yourself.",
   },
 ];

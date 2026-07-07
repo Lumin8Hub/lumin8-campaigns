@@ -1,5 +1,6 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { BadgeDollarSign, Clock3 } from "lucide-react";
 import MagneticButton from "./animations/MagneticButton";
 import { openCandidateForm } from "@/lib/tally";
@@ -18,67 +19,117 @@ const MapleLeafIcon = ({ className = "" }: { className?: string }) => (
 
 const trustItems = [
   { icon: Clock3, text: "Live in 3 business days" },
-  { icon: BadgeDollarSign, text: "Transparent campaign pricing" },
-  { icon: MapleLeafIcon, text: "Built for Canadian elections" },
+  { icon: BadgeDollarSign, text: "$1,000 CAD flat" },
+  { icon: MapleLeafIcon, text: "Built for Canadian election rules" },
+];
+
+const heroTiles = [
+  { src: "candidates/hero-tile-1.webp", alt: "Illustrated candidate smiling beside a VOTE sign" },
+  { src: "candidates/hero-tile-2.webp", alt: "Illustrated candidate in a suit beside an ELECT sign" },
+  { src: "candidates/hero-tile-3.webp", alt: "Illustrated candidate beside a RE-ELECT sign" },
+  { src: "candidates/hero-tile-4.webp", alt: "Illustrated candidate beside a VOTE FOR CHANGE sign" },
+  { src: "candidates/hero-tile-5.webp", alt: "Illustrated candidate beside a FOR COUNCIL sign" },
+  { src: "candidates/hero-tile-6.webp", alt: "Illustrated candidate beside a school board campaign sign" },
+  { src: "candidates/hero-tile-7.webp", alt: "Illustrated candidate beside a FOR MAYOR sign" },
+  { src: "candidates/hero-tile-8.webp", alt: "Illustrated candidate beside a YOUR VOICE sign" },
+  { src: "candidates/hero-tile-9.webp", alt: "Illustrated candidate beside an ELECTION DAY sign" },
 ];
 
 const CandidatesHero = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+
   useEffect(() => {
     const ctx = gsap.context(() => {
-      const tl = gsap.timeline({ delay: 0.3 });
-      tl.from(".hero-headline", { y: 40, opacity: 0, duration: 0.8, ease: "power3.out" })
-        .from(".hero-subline", { y: 40, opacity: 0, duration: 0.8, ease: "power3.out" }, "-=0.4")
-        .from(".hero-ctas", { y: 30, opacity: 0, duration: 0.6, ease: "power3.out" }, "-=0.3")
-        .from(".hero-art", { y: 36, opacity: 0, duration: 0.7, ease: "power3.out" }, "-=0.2");
-    });
+      const mm = gsap.matchMedia();
+      mm.add("(prefers-reduced-motion: no-preference)", () => {
+        const tl = gsap.timeline({ delay: 0.2 });
+        tl.from(".hero-eyebrow", { y: 24, opacity: 0, duration: 0.6, ease: "power3.out" })
+          .from(
+            ".hero-line",
+            { y: 40, opacity: 0, duration: 0.7, ease: "power3.out", stagger: 0.1 },
+            "-=0.4",
+          )
+          .from(".hero-subline", { y: 40, opacity: 0, duration: 0.6, ease: "power3.out" }, "-=0.4")
+          .from(".hero-ctas", { y: 30, opacity: 0, duration: 0.6, ease: "power3.out" }, "-=0.4")
+          .from(".hero-chip", { y: 20, opacity: 0, duration: 0.5, ease: "power3.out", stagger: 0.1 }, "-=0.4")
+          .from(
+            ".hero-tile",
+            { scale: 0.9, opacity: 0, duration: 0.5, ease: "power3.out", stagger: 0.06 },
+            0.3,
+          );
+
+        // Parallax drift: grid moves slightly slower than the page
+        gsap.to(".hero-grid", {
+          y: -48,
+          ease: "none",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top top",
+            end: "bottom top",
+            scrub: true,
+          },
+        });
+      });
+    }, sectionRef);
     return () => ctx.revert();
   }, []);
 
   return (
-    <section className="relative flex min-h-[100dvh] items-center overflow-hidden bg-background px-6 py-28 md:py-32">
+    <section
+      ref={sectionRef}
+      className="relative flex min-h-[100dvh] items-center overflow-hidden bg-background px-6 py-28 md:py-32"
+    >
       <div className="mx-auto max-w-6xl">
         <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(340px,0.72fr)] lg:gap-12">
           <div>
+            <span className="hero-eyebrow section-label">For Municipal Candidates</span>
+
             <h1
-              className="hero-headline mb-5 max-w-4xl font-heading font-extrabold leading-[1.02] tracking-tight text-foreground"
+              className="mb-5 max-w-4xl font-heading font-extrabold leading-[1.02] tracking-tight text-foreground"
               style={{ fontSize: "clamp(3rem, 6vw, 5.35rem)" }}
             >
-              Your winning campaign website starts here.
+              <span className="hero-line block">Your winning campaign</span>
+              <span className="hero-line block">website starts here.</span>
             </h1>
 
             <p
               className="hero-subline mb-5 max-w-2xl font-heading font-semibold leading-snug text-primary"
               style={{ fontSize: "clamp(1.35rem, 2.5vw, 1.85rem)" }}
             >
-              Professional municipal campaign sites, launch fast, price clearly.
+              Professional campaign sites, live in 3 days, for a flat $1,000 CAD.
             </p>
 
             <div className="hero-ctas flex flex-col items-start gap-4">
               <MagneticButton
                 as="button"
                 onClick={openCandidateForm}
-                className="inline-block rounded-full bg-primary px-8 py-4 text-center font-heading font-bold text-primary-foreground shadow-sm"
+                className="inline-block rounded-full bg-accent px-8 py-4 text-center font-heading font-bold text-accent-foreground shadow-sm"
               >
                 Get Started
               </MagneticButton>
             </div>
           </div>
 
-          <div className="hero-art overflow-hidden rounded-lg border border-foreground/10 bg-lumin8-off-white shadow-sm lg:row-span-2">
-            <img
-              src={`${import.meta.env.BASE_URL}candidates/hero-candidate-grid.png`}
-              alt="A grid of diverse, generic municipal candidates looking toward each other"
-              className="block aspect-square w-full object-cover object-center"
-              fetchPriority="high"
-            />
+          <div className="hero-grid grid aspect-square grid-cols-3 gap-[2px] overflow-hidden rounded-2xl bg-background lg:row-span-2">
+            {heroTiles.map((tile) => (
+              <img
+                key={tile.src}
+                src={`${import.meta.env.BASE_URL}${tile.src}`}
+                alt={tile.alt}
+                width={400}
+                height={400}
+                loading="eager"
+                className="hero-tile block aspect-square h-full w-full rounded-lg object-cover"
+              />
+            ))}
           </div>
 
           <div>
-            <ul className="hero-ctas grid gap-3 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
+            <ul className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
               {trustItems.map((item) => (
                 <li
                   key={item.text}
-                  className="flex items-center gap-3 rounded-lg border border-foreground/10 bg-lumin8-off-white px-4 py-3 text-sm font-semibold text-foreground"
+                  className="hero-chip flex items-center gap-3 rounded-2xl border border-black/[0.06] bg-lumin8-off-white px-4 py-3 text-sm font-semibold text-foreground"
                 >
                   <item.icon className="h-5 w-5 shrink-0 text-primary" />
                   <span>{item.text}</span>

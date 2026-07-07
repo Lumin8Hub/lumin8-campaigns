@@ -24,7 +24,14 @@ const CandidatesFAQ = () => {
 
         <div className="space-y-0">
           {candidateFaq.map((item, i) => (
-            <div key={i} className="border-b border-foreground/10">
+            <motion.div
+              key={i}
+              initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: i * 0.06 }}
+              className="border-b border-foreground/10"
+            >
               <button
                 onClick={() => toggle(i)}
                 className="flex w-full items-center justify-between py-6 text-left"
@@ -55,7 +62,7 @@ const CandidatesFAQ = () => {
                   </motion.div>
                 )}
               </AnimatePresence>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

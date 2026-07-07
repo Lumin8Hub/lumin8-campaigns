@@ -1,81 +1,91 @@
+import { useRef } from "react";
+import { motion, useInView, useReducedMotion } from "framer-motion";
+import {
+  Search,
+  Users,
+  HandCoins,
+  Rocket,
+  BadgeDollarSign,
+  KeyRound,
+  type LucideIcon,
+} from "lucide-react";
 import SectionReveal from "./animations/SectionReveal";
 
-const benefits = [
+type Benefit = { icon: LucideIcon; heading: string; text: string };
+
+const benefits: Benefit[] = [
   {
-    image: "candidates/benefit-search.png",
-    alt: "A laptop and phone showing an abstract campaign website layout",
-    heading: "Be findable when voters search",
-    text: "Give voters, reporters, donors, and endorsers one clear place to learn who you are and what you stand for.",
+    icon: Search,
+    heading: "Be found",
+    text: "When voters search your name, they find you — not nothing.",
   },
   {
-    image: "candidates/benefit-volunteers.png",
-    alt: "A laptop showing an abstract volunteer signup form",
-    heading: "Capture volunteer energy",
-    text: "Make it easy for supporters to raise their hand, share their contact info, and join the campaign before momentum cools.",
+    icon: Users,
+    heading: "Sign up volunteers",
+    text: "Turn supporters into door-knockers with one form.",
   },
   {
-    image: "candidates/benefit-donations.png",
-    alt: "A laptop and phone showing an abstract secure contribution flow",
-    heading: "Create a cleaner donation path",
-    text: "Guide contributors with donation language, donor-information fields, and compliance-aware prompts.",
+    icon: HandCoins,
+    heading: "Take donations properly",
+    text: "A clean donation path that follows the rules.",
   },
   {
-    image: "candidates/benefit-launch.png",
-    alt: "A laptop showing an abstract launch dashboard and timeline",
-    heading: "Launch in 3 business days",
-    text: "Once your intake is complete, we build from a focused campaign framework and get your site ready fast.",
+    icon: Rocket,
+    heading: "Launch in 3 days",
+    text: "From intake form to live site.",
   },
   {
-    image: "candidates/benefit-pricing.png",
-    alt: "A tablet and proposal sheet showing abstract pricing cards",
-    heading: "Clear campaign pricing",
-    text: "Start with a focused package conversation and understand the scope before work begins.",
+    icon: BadgeDollarSign,
+    heading: "$1,000 flat",
+    text: "One price. No hourly billing. No surprises.",
   },
   {
-    image: "candidates/benefit-ownership.png",
-    alt: "A laptop showing abstract folder, key, and data ownership visuals",
+    icon: KeyRound,
     heading: "100% yours",
-    text: "Your domain, your content, and your data stay with your campaign after launch.",
+    text: "Your domain, your content, your data.",
   },
 ];
 
 const CampaignBenefitsSection = () => {
+  const gridRef = useRef(null);
+  const gridInView = useInView(gridRef, { once: true, margin: "-80px" });
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <section id="benefits" className="bg-lumin8-off-white px-6 py-24">
       <div className="mx-auto max-w-6xl">
         <SectionReveal>
           <span className="section-label">What Your Website Does</span>
           <h2 className="section-headline max-w-3xl text-foreground">
-            Turn attention into action
+            A campaign website should turn attention into action.
           </h2>
           <p className="section-subheadline mb-12">
-            The essentials are simple: help people find you, understand you,
-            trust you, and take the next step.
+            Voters will search your name. Give them a reason to vote for you.
           </p>
         </SectionReveal>
 
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <div ref={gridRef} className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {benefits.map((benefit, index) => (
-            <SectionReveal key={benefit.heading} delay={index * 0.05}>
-              <article className="h-full overflow-hidden rounded-lg border border-foreground/10 bg-background">
-                <div className="aspect-[16/10] overflow-hidden bg-muted">
-                  <img
-                    src={`${import.meta.env.BASE_URL}${benefit.image}`}
-                    alt={benefit.alt}
-                    loading="lazy"
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="mb-2 font-heading text-xl font-bold text-foreground">
-                    {benefit.heading}
-                  </h3>
-                  <p className="text-base leading-relaxed text-muted-foreground">
-                    {benefit.text}
-                  </p>
-                </div>
-              </article>
-            </SectionReveal>
+            <motion.article
+              key={benefit.heading}
+              initial={shouldReduceMotion ? false : { opacity: 0, y: 30 }}
+              animate={gridInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: index * 0.08 }}
+              className="h-full rounded-2xl border border-black/[0.06] bg-background p-6 transition-shadow duration-300 hover:shadow-md"
+            >
+              <motion.div
+                initial={shouldReduceMotion ? false : { scale: 0.6, opacity: 0 }}
+                animate={gridInView ? { scale: 1, opacity: 1 } : {}}
+                transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1], delay: index * 0.08 + 0.1 }}
+                className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/15"
+              >
+                <benefit.icon className="h-6 w-6 text-primary" aria-hidden="true" />
+              </motion.div>
+              <h3 className="mb-2 font-heading text-xl font-bold text-foreground">
+                {benefit.heading}
+              </h3>
+              <p className="text-base leading-relaxed text-muted-foreground">{benefit.text}</p>
+            </motion.article>
           ))}
         </div>
       </div>

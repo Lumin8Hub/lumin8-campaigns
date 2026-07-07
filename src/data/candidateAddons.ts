@@ -2,25 +2,22 @@ export const candidateAddons = [
   {
     service: "Branded campaign email",
     price: "$250",
-    description: "you@yourname.ca — look official in every inbox.",
+    description: "you@yourname.ca in every inbox.",
   },
   {
     service: "Donation portal",
     price: "$500",
-    description:
-      "Online contributions with contribution-limit prompts, donor information capture, and required disclaimer scaffolding.",
+    description: "Online donations with limits and receipts handled correctly.",
   },
   {
     service: "Print pack",
     price: "$750",
-    description:
-      "Lawn sign concept + brochure, print-ready, matched to your site.",
+    description: "Lawn sign and brochure, matched to your site.",
   },
   {
     service: "Campaign Season Care",
-    price: "$400 flat",
-    description:
-      "Content updates, event and endorsement additions, and monitoring through election day.",
+    price: "$400",
+    description: "Updates and monitoring through election day.",
   },
   {
     service: "48-hour rush",
@@ -30,7 +27,6 @@ export const candidateAddons = [
   {
     service: "Winner site conversion",
     price: "$500",
-    description:
-      "After election day, convert your campaign site into a councillor, trustee, mayor, or representative site.",
+    description: "Won? We convert your site for your term in office.",
   },
 ];
