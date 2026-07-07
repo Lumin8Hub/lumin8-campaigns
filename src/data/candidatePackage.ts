@@ -1,18 +1,16 @@
 export const candidatePackage = {
-  name: "The Quick Launch package",
-  price: 1000,
-  tagline: "Everything a municipal campaign site needs. Nothing it doesn't.",
+  name: "Custom campaign website package",
+  badge: "Package concept in progress",
+  tagline: "A focused website plan shaped around your race, timeline, and launch needs.",
   features: [
-    "Professional single-site build on your own domain (we can register it for you)",
+    "Professional campaign website on your own domain",
     "Mobile-first, fast-loading, accessible design",
-    "Up to six sections: Home, About, Platform/Priorities, News/Events, Get Involved, Contact",
-    "Volunteer sign-up and contact forms delivered straight to your inbox",
-    "“Authorized by” attribution line and campaign disclaimer scaffolding",
-    "Basic search setup so voters find you when they Google your name",
-    "One revision round + launch support",
-    "Live within 3 business days of your completed form",
+    "Platform, biography, volunteer, donation, and contact pathways",
+    "Election-aware attribution and disclaimer support",
+    "Search setup so voters can find you",
+    "Launch planning, review, and handoff support",
   ],
   microcopy:
-    "The first form takes about five minutes. We will follow up with next steps, timeline, and payment details.",
+    "Final package details are being refined. Get started and we will confirm the right scope before work begins.",
   cta: "Get Started",
 };

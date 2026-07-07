@@ -28,8 +28,8 @@ const benefits = [
   {
     image: "candidates/benefit-pricing.png",
     alt: "A tablet and proposal sheet showing abstract pricing cards",
-    heading: "$1,000 CAD flat package",
-    text: "No open-ended hourly billing. You know the core website cost before the work begins.",
+    heading: "Clear campaign pricing",
+    text: "Start with a focused package conversation and understand the scope before work begins.",
   },
   {
     image: "candidates/benefit-ownership.png",
@@ -46,7 +46,7 @@ const CampaignBenefitsSection = () => {
         <SectionReveal>
           <span className="section-label">What Your Website Does</span>
           <h2 className="section-headline max-w-3xl text-foreground">
-            A campaign website should turn attention into action.
+            Turn attention into action
           </h2>
           <p className="section-subheadline mb-12">
             The essentials are simple: help people find you, understand you,

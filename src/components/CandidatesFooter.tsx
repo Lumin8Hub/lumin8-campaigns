@@ -41,9 +41,8 @@ const CandidatesFooter = () => {
             For Candidates
           </h4>
           <p className="max-w-xs text-sm leading-relaxed text-foreground/70">
-            Quick Launch campaign websites start at $1,000 CAD, with optional
-            add-ons for donations, print, care, rush delivery, and post-election
-            conversion.
+            Professional campaign websites with optional add-ons for donations,
+            print, care, rush delivery, and post-election conversion.
           </p>
         </div>
       </div>

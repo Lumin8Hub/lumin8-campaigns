@@ -2,7 +2,7 @@ export const candidateFaq = [
   {
     question: "Why so fast and affordable?",
     answer:
-      "Because we've productized it. One proven campaign framework, reusable build patterns, and a focused intake keep the work efficient. You get agency quality without open-ended agency overhead.",
+      "Because we start from a proven campaign framework, reusable build patterns, and a focused intake. That keeps the work efficient while still giving you a professional site shaped around your race.",
   },
   {
     question: "What do I need to have ready?",
@@ -12,7 +12,7 @@ export const candidateFaq = [
   {
     question: "Can you write my content?",
     answer:
-      "The Quick Launch package polishes what you provide. Full copywriting is available as an add-on — ask when you book.",
+      "Yes. We can polish what you provide, or scope full copywriting as an add-on when we confirm the right package for your campaign.",
   },
   {
     question: "I already have a Wix/Squarespace site. Should I switch?",

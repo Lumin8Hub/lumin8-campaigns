@@ -1,13 +1,25 @@
 import { useEffect } from "react";
 import { gsap } from "gsap";
-import { BadgeDollarSign, Clock3, ShieldCheck } from "lucide-react";
+import { BadgeDollarSign, Clock3 } from "lucide-react";
 import MagneticButton from "./animations/MagneticButton";
 import { openCandidateForm } from "@/lib/tally";
 
+const MapleLeafIcon = ({ className = "" }: { className?: string }) => (
+  <svg
+    aria-hidden="true"
+    viewBox="0 0 24 24"
+    className={className}
+    fill="currentColor"
+    focusable="false"
+  >
+    <path d="M12 2.8 13.7 8l4.4-2.5-1.4 4.7 4.6.6-3.8 3.1 2 4-4.8-1-1.7 4.3h-2l-1.7-4.3-4.8 1 2-4-3.8-3.1 4.6-.6L5.9 5.5 10.3 8 12 2.8Z" />
+  </svg>
+);
+
 const trustItems = [
   { icon: Clock3, text: "Live in 3 business days" },
-  { icon: BadgeDollarSign, text: "$1,000 CAD flat package" },
-  { icon: ShieldCheck, text: "Built with Canadian election finance rules in mind" },
+  { icon: BadgeDollarSign, text: "Transparent campaign pricing" },
+  { icon: MapleLeafIcon, text: "Built for Canadian elections" },
 ];
 
 const CandidatesHero = () => {
@@ -38,8 +50,7 @@ const CandidatesHero = () => {
               className="hero-subline mb-5 max-w-2xl font-heading font-semibold leading-snug text-primary"
               style={{ fontSize: "clamp(1.35rem, 2.5vw, 1.85rem)" }}
             >
-              Professional municipal campaign sites, launched fast, priced clearly,
-              and built to help voters take the next step.
+              Professional municipal campaign sites, launch fast, price clearly.
             </p>
 
             <div className="hero-ctas flex flex-col items-start gap-4">

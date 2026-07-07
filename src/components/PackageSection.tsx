@@ -10,9 +10,7 @@ const PackageSection = () => {
       <div className="mx-auto max-w-4xl">
         <SectionReveal>
           <span className="section-label">Core Package</span>
-          <h2 className="section-headline mb-4 text-foreground">
-            The Quick Launch package — $1,000 CAD
-          </h2>
+          <h2 className="section-headline mb-4 text-foreground">Campaign website package</h2>
           <p className="section-subheadline mb-12">{candidatePackage.tagline}</p>
         </SectionReveal>
 
@@ -25,13 +23,9 @@ const PackageSection = () => {
               <h3 className="font-heading text-3xl font-bold text-foreground">
                 {candidatePackage.name}
               </h3>
-              <div>
-                <span className="text-lg text-muted-foreground">$</span>
-                <span className="font-heading text-5xl font-extrabold text-foreground">
-                  {candidatePackage.price.toLocaleString()}
-                </span>
-                <span className="ml-2 text-xs font-bold text-muted-foreground">CAD</span>
-              </div>
+              <span className="w-fit rounded-full bg-primary/10 px-4 py-2 text-sm font-bold text-primary">
+                {candidatePackage.badge}
+              </span>
             </div>
 
             <ul className="mb-8 grid gap-x-8 gap-y-3 md:grid-cols-2">
