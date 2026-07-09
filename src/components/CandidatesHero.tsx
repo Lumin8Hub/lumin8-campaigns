@@ -107,6 +107,12 @@ const CandidatesHero = () => {
               >
                 Get Started
               </MagneticButton>
+              <a
+                href="#live-demo"
+                className="flex min-h-[44px] items-center text-sm font-semibold text-foreground/70 underline decoration-foreground/30 underline-offset-4 transition-colors hover:decoration-primary"
+              >
+                See it live: try the demo ↓
+              </a>
             </div>
           </div>
 

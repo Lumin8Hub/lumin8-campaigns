@@ -33,12 +33,20 @@ const CandidatesNavbar = () => {
         <img src={lumin8Logo} alt="LUMIN8" className="h-7 w-auto" />
       </a>
 
-      <button
-        onClick={openCandidateForm}
-        className="min-h-[44px] rounded-full bg-cta px-5 py-2 font-heading text-sm font-semibold text-cta-foreground transition-transform duration-300 hover:scale-[1.03]"
-      >
-        Get Started
-      </button>
+      <div className="flex items-center gap-6">
+        <a
+          href="#live-demo"
+          className="hidden min-h-[44px] items-center font-heading text-sm font-semibold text-foreground/80 transition-colors hover:text-foreground sm:inline-flex"
+        >
+          Live Demo
+        </a>
+        <button
+          onClick={openCandidateForm}
+          className="min-h-[44px] rounded-full bg-cta px-5 py-2 font-heading text-sm font-semibold text-cta-foreground transition-transform duration-300 hover:scale-[1.03]"
+        >
+          Get Started
+        </button>
+      </div>
     </nav>
   );
 };

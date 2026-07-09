@@ -5,6 +5,7 @@ import CandidatesNavbar from "@/components/CandidatesNavbar";
 import CandidatesHero from "@/components/CandidatesHero";
 import CampaignBenefitsSection from "@/components/CampaignBenefitsSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
+import LiveDemoSection from "@/components/LiveDemoSection";
 import PackageSection from "@/components/PackageSection";
 import CampaignAddOnsSection from "@/components/CampaignAddOnsSection";
 import ComplianceSection from "@/components/ComplianceSection";
@@ -33,6 +34,7 @@ const Index = () => {
         <CandidatesHero />
         <CampaignBenefitsSection />
         <HowItWorksSection />
+        <LiveDemoSection />
         <PackageSection />
       <CampaignAddOnsSection />
       <ComplianceSection />
