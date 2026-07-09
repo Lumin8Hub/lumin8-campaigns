@@ -85,7 +85,7 @@ const PackageSection = () => {
 
             <button
               onClick={openCandidateForm}
-              className="block w-full rounded-full bg-accent px-10 py-4 text-center font-heading font-semibold text-accent-foreground transition-transform duration-300 hover:scale-[1.02] md:w-auto"
+              className="block w-full rounded-full bg-cta px-10 py-4 text-center font-heading font-semibold text-accent-foreground transition-transform duration-300 hover:scale-[1.02] md:w-auto"
             >
               {candidatePackage.cta}
             </button>

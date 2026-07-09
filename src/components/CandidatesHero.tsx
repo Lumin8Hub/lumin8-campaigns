@@ -103,7 +103,7 @@ const CandidatesHero = () => {
               <MagneticButton
                 as="button"
                 onClick={openCandidateForm}
-                className="inline-block rounded-full bg-accent px-8 py-4 text-center font-heading font-bold text-accent-foreground shadow-sm"
+                className="inline-block rounded-full bg-cta px-8 py-4 text-center font-heading font-bold text-accent-foreground shadow-sm"
               >
                 Get Started
               </MagneticButton>

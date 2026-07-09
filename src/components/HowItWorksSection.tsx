@@ -134,7 +134,7 @@ const HowItWorksSection = () => {
         <div className="mt-10 flex justify-start">
           <button
             onClick={openCandidateForm}
-            className="rounded-full bg-accent px-8 py-3 font-heading font-semibold text-accent-foreground transition-transform duration-300 hover:scale-[1.03]"
+            className="rounded-full bg-cta px-8 py-3 font-heading font-semibold text-accent-foreground transition-transform duration-300 hover:scale-[1.03]"
           >
             Get Started
           </button>
