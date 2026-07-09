@@ -5,11 +5,8 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  // Serving from the GitHub Pages project URL for now:
-  // https://lumin8hub.github.io/lumin8-campaigns/
-  // When the campaigns.lumin8.agency DNS is set up, switch this back to "/"
-  // and restore public/CNAME.
-  base: "/lumin8-campaigns/",
+  // Served from the elections.lumin8.agency custom domain (see public/CNAME).
+  base: "/",
   server: {
     host: "0.0.0.0",
     port: 8080,

@@ -7,13 +7,12 @@
       // GitHub Pages SPA redirect
       // Encodes the full path as a query string and redirects to the root
       // so that index.html can restore it before React Router boots.
-      // slice(0, 2) keeps the "/lumin8-campaigns" repo segment while the site
-      // is served from the GitHub Pages project URL. Change back to
-      // slice(0, 1) when moving to the custom domain (root) deploy.
+      // slice(0, 1) keeps just the origin root now that the site is served
+      // from the elections.lumin8.agency custom domain (no repo sub-path).
       var l = window.location;
       l.replace(
         l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-        l.pathname.split('/').slice(0, 2).join('/') +
+        l.pathname.split('/').slice(0, 1).join('/') +
         '/?p=' + encodeURIComponent(l.pathname + l.search) +
         (l.hash ? '&h=' + encodeURIComponent(l.hash) : '')
       );
