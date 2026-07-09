@@ -58,7 +58,7 @@ const FinalCTABand = () => {
           <MagneticButton
             as="button"
             onClick={openCandidateForm}
-            className="inline-block rounded-full bg-cta px-10 py-4 text-center font-heading text-lg font-bold text-accent-foreground"
+            className="inline-block rounded-full bg-cta px-10 py-4 text-center font-heading text-lg font-bold text-cta-foreground"
           >
             Get Started
           </MagneticButton>

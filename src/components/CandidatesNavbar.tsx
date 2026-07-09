@@ -35,7 +35,7 @@ const CandidatesNavbar = () => {
 
       <button
         onClick={openCandidateForm}
-        className="min-h-[44px] rounded-full bg-cta px-5 py-2 font-heading text-sm font-semibold text-accent-foreground transition-transform duration-300 hover:scale-[1.03]"
+        className="min-h-[44px] rounded-full bg-cta px-5 py-2 font-heading text-sm font-semibold text-cta-foreground transition-transform duration-300 hover:scale-[1.03]"
       >
         Get Started
       </button>
